@@ -13,10 +13,15 @@
     --black: #020726;
   }
 
+  @font-face {
+      font-family: "Eina regular";
+      src: url("font\Eina01-Regular.ttf");
+  }
+
 body {
     display:grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 150px 1fr 1fr 1fr;
+    grid-template-rows: 150px 1fr 1fr 500px;
     height:100vh;
     grid-template-areas: 
     "header header"
@@ -56,8 +61,24 @@ header {
 
 footer{
     grid-area: footer;
-    /* background:linear-gradient(.25turn,#00242B,20%, #004C5D); */
-    background: linear-gradient(to right,
-     var(--light-blue) 20%, var(--light-green) 20% 40%, var(--dark-green) 40% 60%, var(--main-blue) 60% 80%, var(--project-blue) 80%);
+    background:linear-gradient(.25turn,#00242B,20%, #004C5D);
+    /* background: linear-gradient(to right, */
+     /* var(--light-blue) 20%, var(--light-green) 20% 40%, var(--dark-green) 40% 60%, var(--main-blue) 60% 80%, var(--project-blue) 80%); */
 
+}
+
+.footer-content{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    margin:50px;
+}
+
+.footer-content img{
+    width:200px;
+}
+
+.footer-links p{
+    color:var(--light-blue);
+    font-family: Eina01-Regular;    
 }
