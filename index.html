@@ -5,30 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/cb345eb02c.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
   </head>
   <body>
     <header>
-      <div class="logo-container">
-        <img
-          class="logo"
-          src="icons\ameta-logo-hvit-f.svg"
-          alt="Ameta sin logo"
-        />
-      </div>
+      <img
+        class="logo"
+        src="icons\ameta-logo-hvit-f.svg"
+        alt="Ameta sin logo"
+      />
       <div class="menu-items-container">
-        <ul class="menu-items">
-          <li><a href="">PROSJEKTER</a></li>
-          <li><a href="">OM OSS</a></li>
-          <li><a href="">KONTAKT OSS</a></li>
-          <li><a href="">ANSATTE</a></li>
-        </ul>
+        <i class="fa-solid fa-bars"></i>
+        <div class="menu">
+          <i class="fa-solid fa-xmark"></i>
+          <ul>
+            <li><a class="menuItem" href="">PROSJEKTER</a></li>
+            <li><a class="menuItem" href="">OM OSS</a></li>
+            <li><a class="menuItem" href="">KONTAKT OSS</a></li>
+            <li><a class="menuItem" href="">ANSATTE</a></li>
+          </ul>
+
+        </div>
+
       </div>
     </header>
-
-    <div class="api-container">
-      <img src="" alt="" />
-    </div>
+    <main>
+      <div class="video-container">
+        <video name="slide" autoplay muted loop>
+          <source src="videos\video1.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="api-container"></div>
+    </main>
 
     <footer>
       <div class="footer-content">
@@ -38,6 +50,10 @@
           <a href=""><p>Kontakt oss</p></a>
           <a href=""><p>Ansatte</p></a>
           <a href=""><p>Våre prosjekter</p></a>
+        </div>
+        <div class="org-number">
+          <p>Org nummer: 999 230 857</p>
+          <p>Tlf: +47 38 79 58 40</p>
         </div>
       </div>
     </footer>

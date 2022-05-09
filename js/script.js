@@ -1,49 +1,74 @@
 const container = document.querySelector(".api-container");
 
 const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
-// const imageUrl = "https://jorgeneksamen2022.online/wp-json/wp/v2/media/";
 
 async function getApi() {
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
 
   for (let i = 0; i < data.length; i++) {
-    console.log(data[i]);
+    
 
     container.innerHTML += `
-    <a href="spesific-projects.html?id=${data[i].id}">
-        <h1>${data[i].title.rendered}</h1>
-        <p>${data[i].excerpt.rendered}</p>
+    <a class="project-items" href="spesific-projects.html?id=${data[i].id}">
+        <h2>${data[i].title.rendered}</h2>
         <img src=${data[i].featured_media_src_url}>
+        <p>${data[i].excerpt.rendered}</p>
     </a>`;
   }
 }
 
 getApi();
 
-// async function getImage() {
-//   try {
-//     const response = await fetch(imageUrl);
-//     const imageData = await response.json();
 
-//     for (let i = 0; i < imageData.length; i++) {
-//       const image = imageData[i].guid.rendered;
-//       container.innerHTML += `<img class="project" src="${image}">`;
-//     }
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
+// video slider
 
-// getImage();
+let i = 0;
+const videos = [];
 
-// // function createNode(getApi, callImage) {
-// //   return `
-// //             <div>
-// //                 <h1>${title}</h1>
-// //                 <img src="${image}"
-// //             </div>`;
-// // }
+function videoSlide() {
+  videos[0] = "videos/video1.mp4";
+  videos[1] = "videos/video2.mp4";
+  videos[2] = "videos/video3.mp4";
+  document.querySelector("video").src = videos[i];
 
-// // createNode();
+  if (i < videos.length - 1) {
+    i++;
+  } else {
+    i = 0;
+  }
+
+  setTimeout(videoSlide, 3000);
+}
+
+videoSlide();
+
+
+//hamburger menu
+const hamburgerMenu = document.querySelector(".fa-bars");
+const exitMenu = document.querySelector(".fa-xmark");
+const menu = document.querySelector(".menu");
+
+
+hamburgerMenu.addEventListener("click", function(){ 
+  if (menu.style.display === "block"){
+    menu.style.display ="none"
+  }
+  else{
+    menu.style.display ="block"
+  }
+}); 
+
+exitMenu.addEventListener("click", function(){ 
+  if (menu.style.display === "none"){
+    menu.style.display ="block"
+    exitMenu.style.display ="block"
+
+  }
+  else{
+    menu.style.display ="none"
+  }
+}); 
+
+
