@@ -44,10 +44,10 @@ header {
     display:flex;
     align-items: center;
     width:100%;
-    height:15vh;
+    height:100px;
     justify-content: space-between;
-}
 
+}
 
 
 .logo{
@@ -76,16 +76,24 @@ header {
 .fa-bars{
     color: var(--white);
     margin-right:15px;
-    font-size:1.3rem;
-    
-    
+    font-size:1.3rem; 
+}
+
+.closing-icon{
+    display:flex;
+    justify-content: flex-end;
+    margin-right:100px;
+    width:100%;
 }
 
 .fa-xmark{
     /* display:none; */
-    
     font-size:1.3rem;
     color:#F5F5F5;
+    z-index: 99;
+    position:fixed;
+    top:40px;
+    right:20px;
     
 }
 
