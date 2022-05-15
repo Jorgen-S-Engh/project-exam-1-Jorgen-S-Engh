@@ -32,28 +32,23 @@
 
     <main>
       <div class="video-container">
-        <video name="slide" autoplay muted loop>
+        <!-- <video name="slide" autoplay muted loop> -->
           <source src="videos\video1.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="api-container"></div>
 
       <!-- KARUSELL -->
-      <div class="slideshow-container">
-        <div class="mySlides fade">
-          <img src="https://source.unsplash.com/random/?productivity,city" />
+      <div class="carousel">
+        <button class="carousel__button previous" id="previous">&#8656</button>
+        <div class="carousel__images">
+          <a href=""></a>
+          <!-- <img src="https://via.placeholder.com/300" alt="">
+          <img src="https://via.placeholder.com/300" alt="">
+          <img src="https://via.placeholder.com/300" alt="">
+          <img src="https://via.placeholder.com/300" alt=""> -->
         </div>
-        <div class="mySlides fade">
-          <img src="https://source.unsplash.com/random/?productivity,water" />
-        </div>
-        <div class="mySlides fade">
-          <img
-            src="https://source.unsplash.com/random/?productivity,mountain"
-          />
-        </div>
-        <!-- Next and previous buttons -->
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
+        <button class="carousel__button next" id="next">&#8658</button>
       </div>
     </main>
 

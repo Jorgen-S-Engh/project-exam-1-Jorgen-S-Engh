@@ -156,52 +156,50 @@ footer {
 
 /* Carousel */
 
-/* Slideshow container */
-.slideshow-container {
-    max-width: 500px;
-    height:500px;
+
+.carousel {
+    align-items: center;
+    display: flex;
+    margin: 2rem auto;
+    overflow: hidden;
     position: relative;
-    margin: auto;
-    object-fit: contain;
-  }
-  
-  /* Hide the images by default */
-  .mySlides {
-    display: none;
-  }
+    width: 400px;
+}
 
-  .mySlides img{
-    width:500px;
-    height:500px;
-  }
-  
-  /* Next & previous buttons */
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
+.carousel__images {
+    display: flex;
+    justify-content: center;
+    transform: translateX(0);
+    transition: transform 0.50s;
+}
+
+
+.carousel__button {
+    background: rgba(0, 0, 0, 0.8);
+    border: 0;
+    /* border-radius: 50%; */
     color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
     font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-  }
-  
-  /* Position the "next button" to the right */
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
-  
-
-
-
-
-
+    height: 3rem;
+    opacity: 0.5;
+    position: absolute;
+    transition: opacity 0.25s;
+    width: 3rem;
+    z-index: 1;
+}
+      
+.previous {
+    left: 5px;
+}
+      
+.next {
+ right: 5px;
+}
+      
+.carousel__button:hover{
+    opacity: 0.8;
+} 
+      
+    
