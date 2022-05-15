@@ -5,7 +5,6 @@ const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
 async function getApi() {
   const response = await fetch(url);
   const data = await response.json();
-  // console.log(data);
 
   for (let i = 0; i < data.length; i++) {
     container.innerHTML += `
@@ -63,7 +62,61 @@ exitMenu.addEventListener("click", function () {
   }
 });
 
-// Karusell
+// KARUSELL
+
+const carouselImages = document.querySelector(".carousel__images");
+const carouselButtons = document.querySelectorAll(".carousel__button");
+const numberOfImages = document.querySelectorAll(
+  ".carousel__images img"
+).length;
+let imageIndex = 1;
+let translateX = 0;
+
+carouselButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    if (event.target.id === "previous") {
+      if (imageIndex !== 1) {
+        imageIndex--;
+        translateX += 300;
+      }
+    } else {
+      if (imageIndex !== numberOfImages) {
+        imageIndex++;
+        translateX -= 300;
+      }
+    }
+
+    carouselImages.style.transform = `translateX(${translateX}px)`;
+  });
+});
+
+// KARUSEL
+
+const carouselImages = document.querySelector(".carousel__images");
+const carouselButtons = document.querySelectorAll(".carousel__button");
+const numberOfImages = document.querySelectorAll(
+  ".carousel__images img"
+).length;
+let imageIndex = 1;
+let translateX = 0;
+
+carouselButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    if (event.target.id === "previous") {
+      if (imageIndex !== 1) {
+        imageIndex--;
+        translateX += 300;
+      }
+    } else {
+      if (imageIndex !== numberOfImages) {
+        imageIndex++;
+        translateX -= 300;
+      }
+    }
+
+    carouselImages.style.transform = `translateX(${translateX}px)`;
+  });
+});
 
 // let slideIndex = 1;
 // showSlides(slideIndex);
@@ -73,10 +126,15 @@ exitMenu.addEventListener("click", function () {
 //   showSlides((slideIndex += n));
 // }
 
+// // Thumbnail image controls
+// function currentSlide(n) {
+//   showSlides((slideIndex = n));
+// }
+
 // function showSlides(n) {
 //   let i;
 //   let slides = document.getElementsByClassName("mySlides");
-
+//   let dots = document.getElementsByClassName("dot");
 //   if (n > slides.length) {
 //     slideIndex = 1;
 //   }
@@ -86,6 +144,9 @@ exitMenu.addEventListener("click", function () {
 //   for (i = 0; i < slides.length; i++) {
 //     slides[i].style.display = "none";
 //   }
-
+//   for (i = 0; i < dots.length; i++) {
+//     dots[i].className = dots[i].className.replace(" active", "");
+//   }
 //   slides[slideIndex - 1].style.display = "block";
+//   dots[slideIndex - 1].className += " active";
 // }
