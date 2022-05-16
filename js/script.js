@@ -1,4 +1,25 @@
 const container = document.querySelector(".api-container");
+const slideContainer = document.querySelector(".slide-container");
+
+const buttons = document.querySelectorAll("[data-carousel-button]");
+const slide = document.querySelector("[data-slides]");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+    const slides = button
+      .closest("[data-carousel]")
+      .querySelector("[data-slides]");
+
+    const activeSlide = slides.querySelector("[data-active]");
+    let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+    if (newIndex < 0) newIndex = slides.children.length - 1;
+    if (newIndex >= slides.children.length) newIndex = 0;
+
+    slides.children[newIndex].dataset.active = true;
+    delete activeSlide.dataset.active;
+  });
+});
 
 const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
 
@@ -7,18 +28,26 @@ async function getApi() {
   const data = await response.json();
 
   for (let i = 0; i < data.length; i++) {
-    carouselImages.innerHTML += `
-    <a class="project-items" href="spesific-projects.html?id=${data[i].id}">
-        <h2>${data[i].title.rendered}</h2>
-        <img src=${data[i].featured_media_src_url}>
-        <p>${data[i].excerpt.rendered}</p>
-    </a>`;
-    container.innerHTML += `
-    <a class="project-items" href="spesific-projects.html?id=${data[i].id}">
-        <h2>${data[i].title.rendered}</h2>
-        <img src=${data[i].featured_media_src_url}>
-        <p>${data[i].excerpt.rendered}</p>
-    </a>`;
+    // carouselImages.innerHTML += `
+    // <a class="project-items" href="spesific-projects.html?id=${data[i].id}">
+    //     <h2>${data[i].title.rendered}</h2>
+    //     <img src=${data[i].featured_media_src_url}>
+    //     <p>${data[i].excerpt.rendered}</p>
+    // </a>`;
+    slideContainer.innerHTML += `
+    <li class="slide">
+      <img src="${data[i].featured_media_src_url}" alt="Nature Image #2">
+    </li>
+    <li class="slide">
+      <img src="${data[i].featured_media_src_url}" alt="Nature Image #3">
+    </li>`;
+
+    // container.innerHTML += `
+    // <a class="project-items" href="spesific-projects.html?id=${data[i].id}">
+    //     <h2>${data[i].title.rendered}</h2>
+    //     <img src=${data[i].featured_media_src_url}>
+    //     <p>${data[i].excerpt.rendered}</p>
+    // </a>`;
   }
 }
 
@@ -51,7 +80,7 @@ const hamburgerMenu = document.querySelector(".fa-bars");
 const exitMenu = document.querySelector(".fa-xmark");
 const menu = document.querySelector(".menu");
 
-hamburgerMenu.addEventListener("click", function () {
+hamburgerMenu.addEventListener("click", () => {
   if (menu.style.display === "block") {
     menu.style.display = "none";
   } else {
@@ -59,7 +88,7 @@ hamburgerMenu.addEventListener("click", function () {
   }
 });
 
-exitMenu.addEventListener("click", function () {
+exitMenu.addEventListener("click", () => {
   if (menu.style.display === "none") {
     menu.style.display = "block";
     exitMenu.style.display = "block";
@@ -97,3 +126,5 @@ carouselButtons.forEach((button) => {
     carouselImages.style.transform = `translateX(${translateX}px)`;
   });
 });
+
+// KARUSELL 2
