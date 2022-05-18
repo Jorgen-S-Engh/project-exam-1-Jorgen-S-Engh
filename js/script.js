@@ -79,35 +79,6 @@ exitMenu.addEventListener("click", () => {
 
 // KARUSELL
 
-// const carouselImages = document.querySelector(".carousel__images");
-// const carouselButtons = document.querySelectorAll(".carousel__button");
-// const numberOfImages = document.querySelectorAll(
-//   ".carousel__images img"
-// ).length;
-// let imageIndex = 1;
-// let translateX = 0;
-
-// console.log(numberOfImages);
-
-// carouselButtons.forEach((button) => {
-//   button.addEventListener("click", (event) => {
-//     if (event.target.id === "previous") {
-//       if (imageIndex !== 1) {
-//         imageIndex--;
-//         translateX += 400;
-//       }
-//     } else {
-//       if (imageIndex !== numberOfImages) {
-//         imageIndex++;
-//         translateX -= 400;
-//       }
-//     }
-
-//     carouselImages.style.transform = `translateX(${translateX}px)`;
-//   });
-// });
-
-// KARUSELL 2
 
 const buttons = document.querySelectorAll("[data-carousel-button]");
 const slide = document.querySelector("[data-slides]");
