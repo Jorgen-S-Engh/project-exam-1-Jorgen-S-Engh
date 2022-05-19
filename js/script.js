@@ -1,8 +1,6 @@
 const container = document.querySelector(".api-container");
 const slideContainer = document.querySelector(".slide-container");
 
-
-
 const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
 
 async function getApi() {
@@ -19,10 +17,9 @@ async function getApi() {
     slideContainer.innerHTML += `
     <li class="slide" ${i === 0 ? "data-active='true'" : ""}>
       <img src="${data[i].featured_media_src_url}" alt="Nature Image #2">
-    </li>`
+    </li>`;
 
-
-    // container.innerHTML += 
+    // container.innerHTML +=
     // <a class="project-items" href="spesific-projects.html?id=${data[i].id}">
     //     <h2>${data[i].title.rendered}</h2>
     //     <img src=${data[i].featured_media_src_url}>
@@ -35,25 +32,25 @@ getApi();
 
 // video slider
 
-// let i = 0;
-// const videos = [];
+let i = 0;
+const videos = [];
 
-// function videoSlide() {
-//   videos[0] = "videos/video1.mp4";
-//   videos[1] = "videos/video2.mp4";
-//   videos[2] = "videos/video3.mp4";
-//   document.querySelector("video").src = videos[i];
+function videoSlide() {
+  videos[0] = "videos/video1.mp4";
+  videos[1] = "videos/video2.mp4";
+  videos[2] = "videos/video3.mp4";
+  document.querySelector("video").src = videos[i];
 
-//   if (i < videos.length - 1) {
-//     i++;
-//   } else {
-//     i = 0;
-//   }
+  if (i < videos.length - 1) {
+    i++;
+  } else {
+    i = 0;
+  }
 
-//   setTimeout(videoSlide, 3000);
-// }
+  setTimeout(videoSlide, 8000);
+}
 
-// videoSlide();
+videoSlide();
 
 //hamburger menu
 const hamburgerMenu = document.querySelector(".fa-bars");
@@ -78,7 +75,6 @@ exitMenu.addEventListener("click", () => {
 });
 
 // KARUSELL
-
 
 const buttons = document.querySelectorAll("[data-carousel-button]");
 const slide = document.querySelector("[data-slides]");
