@@ -10,7 +10,7 @@ closeModal.addEventListener("click", () => {
   modalPopup.style.display = "none";
 });
 
-window.onclick = function (e) {
+window.onclick = (e) => {
   if (e.target === modalPopup) {
     modalPopup.style.display = "none";
   }

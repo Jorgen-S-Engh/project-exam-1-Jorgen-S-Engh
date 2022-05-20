@@ -109,23 +109,20 @@ header {
 /* VIDEOS  */
 
 .video-container {
-    /* grid-area: video; */
+    
     width: 100%;
 }
 
-.video-container{
-    /* width:100vw; */
-}
 
 .video-container video {
     object-fit: cover;
     width: 100%;
-    /* transition: 200ms opacity ease-in-out; */
+    
 }
 
 .video-banner{
     padding: 15px;
-    background-color: var(--dark-green);
+    background-color: var(--light-green);
     position:absolute;
     top:200px;
     /* opacity: 80%; */
@@ -298,6 +295,10 @@ header {
 }
 
 a:visited{
+    color:var(--white);
+}
+
+a {
     color:var(--white);
 }
 
@@ -622,7 +623,7 @@ input {
 }
 
 .modal-image-container{
-    width:75%;
+    width:80%;
     margin:0 auto;
 }
 
@@ -656,6 +657,7 @@ input {
     position:absolute;
     top:50%;
     left:50%;
+    width:100%;
     transform: translate(-50%, -50%);
     object-fit:cover;
 }

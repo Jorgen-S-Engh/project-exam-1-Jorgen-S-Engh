@@ -1,6 +1,3 @@
-
-
-
 //hamburger menu
 const hamburgerMenu = document.querySelector(".fa-bars");
 const exitMenu = document.querySelector(".fa-xmark");
