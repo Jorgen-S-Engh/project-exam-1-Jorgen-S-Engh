@@ -287,7 +287,9 @@ header {
 .btn-contact{
     padding: 10px 30px;
     border:solid var(--light-blue) 1px;
-    color:var(--light-blue);
+    color:var(--white);
+    background: linear-gradient(#075473 0%, 30%, #042A3A 50% 100%);
+
 }
 
 .btn-contact:hover{
@@ -460,77 +462,6 @@ footer {
 }
 
 
-/* Secound karusell */
-
-/*
-.carousel {
-    width: 500px;
-    height: 500px;
-    position: relative;
-  }
-
-  .carousel > ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: 200ms opacity ease-in-out;
-    transition-delay: 200ms;
-  }
-
-  .slide > img {
-    display: block;
-    width: 500px;
-    height: 500px;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .slide[data-active] {
-    opacity: 1;
-    z-index: 1;
-    transition-delay: 0ms;
-  }
-
-  .carousel-button {
-    position: absolute;
-    z-index: 2;
-    background: none;
-    border: none;
-    font-size: 3rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: rgba(255, 255, 255, .5);
-    cursor: pointer;
-    border-radius: .25rem;
-    padding: 0 .5rem;
-    background-color: rgba(0, 0, 0, .1);
-  }
-
-  .carousel-button:hover,
-  .carousel-button:focus {
-    color: white;
-    background-color: rgba(0, 0, 0, .2);
-  }
-
-  .carousel-button:focus {
-    outline: 1px solid black;
-  }
-
-  .carousel-button.prev {
-    left: 1rem;
-  }
-
-.carousel-button.next {
-right: 1rem;
-} */
-
-
 
 /* om_oss.html */
 
@@ -577,6 +508,75 @@ right: 1rem;
 .om-oss h1, .om-oss h2{
     font-size:1.3rem;
 }
+
+
+
+/* CONTACT.HTML */
+
+.contact-text-container{
+    background-color: var(--project-blue);
+    color:var(--project-blue);
+    width:100%;
+}
+
+.container-form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding:50px;
+    /* border:solid 2px var(--white); */
+    background-color: var(--project-blue);
+    color:var(--white);
+}
+
+.contact-text{
+    display:flex;
+    flex-direction: column;
+    background-color: var(--project-blue);
+    color:var(--white);
+    width:80%;
+    margin: 0 auto;
+}
+
+.contact-text h1{
+    margin:20px 0px;
+    text-align: center;
+    font-size:1.2rem;
+
+}
+
+form h2{
+    text-align: center;
+}
+
+form{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+
+}
+
+input::placeholder {
+    
+    
+}
+
+
+
+form > * {
+    margin:5px;
+}
+form h1{
+    text-align: center;
+    font-weight:normal;
+}
+
+input {
+    height:50px;
+    
+}
+
+
 
 
 
