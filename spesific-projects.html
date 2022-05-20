@@ -5,36 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/cb345eb02c.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
   </head>
   <body>
     <header>
-      <div class="logo-container">
-        <a href="index.html"
-          ><img
-            class="logo"
-            src="icons\ameta-logo-hvit-f.svg"
-            alt="Ameta sin logo"
-        /></a>
-      </div>
-      <div class="menu-items-container">
-        <ul class="menu-items">
-          <li><a href="">PROSJEKTER</a></li>
-          <li><a href="">OM OSS</a></li>
-          <li><a href="">KONTAKT OSS</a></li>
-          <li><a href="">ANSATTE</a></li>
+      <a href="index.html"><img
+        class="logo"
+        src="icons\ameta-logo-hvit-f.svg"
+        alt="Ameta sin logo"
+      /></a>
+      <i class="fa-solid fa-bars"></i>
+      <div class="menu">
+        <i class="fa-solid fa-xmark"></i>
+        <ul>
+          <li><a class="menuItem" href="">PROSJEKTER</a></li>
+          <li><a class="menuItem" href="om_oss.html">OM OSS</a></li>
+          <li><a class="menuItem" href="">KONTAKT OSS</a></li>
+          <li><a class="menuItem" href="">ANSATTE</a></li>
+          <li>
+            <a href="index.html"
+              ><img
+                class="logo-mobile-menu"
+                src="icons\ameta-logo-hvit-f.svg"
+                alt=""
+            /></a>
+          </li>
         </ul>
       </div>
     </header>
+    <main class="spesific-project-main">
+      <div class="banner-container">
+        <h1>Gartnerløkka</h1>
+      </div>
+      <div class="main-content-project">
+        <div class="text-content-project">
+          <p>Vi tilbyr landmålere til prosjekter på kort og lang tid. I tillegg til å være gode i faget søker våre landmålere alltid områder hvor oppgavene kan effektiviseres og forbedres ved bruk av ny teknologi som feks. 3D scanning i kombinasjon med vanlig måling.</p>
+          
+          <p>Antikk / Bevaring
+            3D Scanning
+            Verneverdig, fredet eller rett og slett uvurderlige gjenstander. Har det utenkelige faktisk skjedd betyr dokumentasjon alt. Med 3D scanning kan vi dokumentere objektet ned til den minste detalj og lagre det for deg til den dagen du trenger det. Bedre føre var...
+            </p>
+        </div>
+        <div class="modal-image-container">
+          <img src="img\pexels-aleksejs-bergmanis-681335 (1).jpg" alt="">
+        </div>
+      </div>
 
-    <div class="results-container">
-      <img src="" alt="" />
-    </div>
+    </main>
 
+   
     <footer>
-      <h3>Vår kompetanse, dine muligheter.</h3>
+      <div class="footer-content">
+        <h3>Vår kompetanse, dine muligheter.</h3>
+        <img src="icons\ameta-logo-hvit-f.svg" alt="" />
+        <div class="footer-links">
+          <a href=""><p>Kontakt oss</p></a>
+          <a href=""><p>Ansatte</p></a>
+          <a href=""><p>Våre prosjekter</p></a>
+        </div>
+        <div class="org-number">
+          <p>Org nummer: 999 230 857</p>
+          <p>Tlf: +47 38 79 58 40</p>
+        </div>
+        <div class="address">
+          <span>Adresse:</span>
+          <p>Kjøita 40</p>
+          <p>4630 Kristiansand</p>
+          <p>Norge</p>
+        </div>
+      </div>
     </footer>
-
-    <script src="js\spesific-projects.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js\hamburger.js"></script>
   </body>
 </html>
