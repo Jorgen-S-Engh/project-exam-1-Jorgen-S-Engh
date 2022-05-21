@@ -16,7 +16,9 @@ async function getApi() {
     // </a>`;
     slideContainer.innerHTML += `
     <li class="slide" ${i === 0 ? "data-active='true'" : ""}>
-      <img src="${data[i].featured_media_src_url}" alt="Nature Image #2">
+    <a class="project-items" href="spesific-projects.html?id=${
+      data[i].id
+    }"><img src="${data[i].featured_media_src_url}" alt="Nature Image #2"></a>
     </li>`;
 
     // container.innerHTML +=
@@ -51,8 +53,6 @@ function videoSlide() {
 }
 
 videoSlide();
-
-
 
 // KARUSELL
 
