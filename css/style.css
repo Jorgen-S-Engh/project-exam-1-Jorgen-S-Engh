@@ -563,12 +563,6 @@ form{
 
 }
 
-input::placeholder {
-    
-    
-}
-
-
 
 form > * {
     margin:5px;
@@ -590,6 +584,10 @@ input {
     width:100%;
     height:200px;
     background-image:url("../img/pexels-aleksejs-bergmanis-681335 (1).jpg");
+    background-repeat: no-repeat;
+    /* background-position: center;  */
+    background-repeat: no-repeat;
+    background-size: cover; 
 
 }
 
