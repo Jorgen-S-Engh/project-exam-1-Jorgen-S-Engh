@@ -1,6 +1,6 @@
 const container = document.querySelector(".api-container");
 const slideContainer = document.querySelector(".slide-container");
-
+const projectsContainer = document.querySelector(".project-container");
 const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
 
 async function getApi() {
@@ -20,6 +20,8 @@ async function getApi() {
       data[i].id
     }"><img src="${data[i].featured_media_src_url}" alt="Nature Image #2"></a>
     </li>`;
+
+    // projectsContainer.innerHTML += `<h3>${data[i].title.rendered}</h3>`;
 
     // container.innerHTML +=
     // <a class="project-items" href="spesific-projects.html?id=${data[i].id}">
