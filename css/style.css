@@ -347,7 +347,7 @@ footer {
     background: linear-gradient(0.25turn, #00242b, 20%, #004c5d);
     /* background: linear-gradient(to right, */
     /* var(--light-blue) 20%, var(--light-green) 20% 40%, var(--dark-green) 40% 60%, var(--main-blue) 60% 80%, var(--project-blue) 80%); */
-    margin-top:50px;
+    /* margin-top:50px; */
 }
 
 
@@ -673,22 +673,26 @@ input {
     align-items: center;
     /* margin-top:50px; */
     background-color: var(--white);
+    background-color: var(--main-blue);
 }
 
 .project-container h1{
     margin:20px;
-    color:var(--project-blue);
-    font-size:2rem;
+    color:var(--white);
+    
+    text-transform:uppercase;
 
 }
 
 .project-items{
     width:300px;
-    height:500px;
+    height:450px;
     display:flex;
     flex-direction:column;
     align-items: center;
     color:var(--white);
+    margin:20px;
+    
 }
 
 .project-img {
@@ -702,7 +706,6 @@ input {
 }
 
 
-
 .project-card{
     background-color: var(--dark-green);
     display:flex;
@@ -710,7 +713,7 @@ input {
     align-items: center;
     margin-top:-5px;
     width:100%;
-    height:30%;
+    height:150px;
 }
 
 
@@ -720,31 +723,10 @@ input {
 
 
 .project-container > a:nth-child(odd) > div:nth-child(odd) > div:nth-child(even){
-    background-color:var(--project-blue);
+    background-color:var(--light-green);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.more{
+    margin: 30px;
+}
 

@@ -1,13 +1,10 @@
 const projectsContainer = document.querySelector(".project-container");
-const morePostsButton = document.querySelector(".more")
-const morePostsContainer = document.querySelector(".more-post-container")
+const morePostsButton = document.querySelector(".more");
+const morePostsContainer = document.querySelector(".more-post-container");
 
 let url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
 
-
-
 async function getApi() {
-
   const response = await fetch(url);
   const data = await response.json();
 
@@ -27,6 +24,7 @@ async function getApi() {
              <div class="project-card">
               <h3>${data[i].title.rendered}</h3>
               <p>Short description</p>  
+              <button class="btn-contact">&#8658</button>
              </div>
             </div>
           </a>`;
@@ -38,14 +36,11 @@ async function getApi() {
     //     <p>${data[i].excerpt.rendered}</p>
     // </a>`;
   }
-
-
 }
 
 getApi();
 
-
-morePostsButton.addEventListener("click", async () =>{
+morePostsButton.addEventListener("click", async () => {
   const response = await fetch(url + "?per_page=100&offset=10");
   const data = await response.json();
   morePostsButton.style.display = "none";
@@ -64,19 +59,4 @@ morePostsButton.addEventListener("click", async () =>{
             </div>
           </a>`;
   }
-  
-  
-
-
-  
 });
-
-// morePostButtons.addEventListener("click", ShowlessPosts () =>{
-//   if ()
-
-// });
-
-
-
-
-
