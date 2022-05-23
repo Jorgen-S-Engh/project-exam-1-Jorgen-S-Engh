@@ -1,7 +1,13 @@
 const projectsContainer = document.querySelector(".project-container");
-const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
+const morePostsButton = document.querySelector(".more")
+const morePostsContainer = document.querySelector(".more-post-container")
+
+let url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
+
+
 
 async function getApi() {
+
   const response = await fetch(url);
   const data = await response.json();
 
@@ -17,7 +23,7 @@ async function getApi() {
             <div class="project-items">
               <div class= project-img>
                 <img src="${data[i].featured_media_src_url}" alt="" />
-             </div>
+              </div>
              <div class="project-card">
               <h3>${data[i].title.rendered}</h3>
               <p>Short description</p>  
@@ -32,6 +38,45 @@ async function getApi() {
     //     <p>${data[i].excerpt.rendered}</p>
     // </a>`;
   }
+
+
 }
 
 getApi();
+
+
+morePostsButton.addEventListener("click", async () =>{
+  const response = await fetch(url + "?per_page=100&offset=10");
+  const data = await response.json();
+  morePostsButton.style.display = "none";
+
+  for (let i = 0; i < data.length; i++) {
+    morePostsContainer.innerHTML += `
+          <a href="spesific-projects.html?id=${data[i].id}">
+            <div class="project-items">
+              <div class= project-img>
+                <img src="${data[i].featured_media_src_url}" alt="" />
+              </div>
+             <div class="project-card">
+              <h3>${data[i].title.rendered}</h3>
+              <p>Short description</p>  
+             </div>
+            </div>
+          </a>`;
+  }
+  
+  
+
+
+  
+});
+
+// morePostButtons.addEventListener("click", ShowlessPosts () =>{
+//   if ()
+
+// });
+
+
+
+
+

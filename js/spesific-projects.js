@@ -9,6 +9,8 @@ const modalPop = document.querySelector(".modal-popup");
 
 const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/" + id;
 
+
+// HA MED TRY CATCH
 async function getApi() {
   const response = await fetch(url);
   const data = await response.json();
@@ -31,19 +33,21 @@ async function getApi() {
 getApi();
 
 const closeModal = document.querySelector(".close-modal");
-// const modal = document.querySelector(".modal-image-container");
-// const modalPop = document.querySelector(".modal-popup");
+// SKRIV OM FEILEN I RAPPORTEN
 
 modal.addEventListener("click", () => {
   modalPop.style.display = "block";
+  console.log("open")
 });
 
-closeModal.addEventListener("click", () => {
-  modalPop.style.display = "none";
-});
+// modalPop.addEventListener("click", ()=>{
+//   modalPop.style.display = "none";
+// })
 
-window.onclick = (e) => {
+
+window.addEventListener("click", (e)=> {
+  console.log(e.target)
   if (e.target === modalPop) {
     modalPop.style.display = "none";
   }
-};
+});
