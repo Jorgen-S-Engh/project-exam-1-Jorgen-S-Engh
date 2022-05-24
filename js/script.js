@@ -4,31 +4,35 @@ const projectsContainer = document.querySelector(".project-container");
 const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
 
 async function getApi() {
-  const response = await fetch(url);
-  const data = await response.json();
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
 
-  for (let i = 0; i < data.length; i++) {
-    // carouselImages.innerHTML += `
-    // <a class="project-items" href="spesific-projects.html?id=${data[i].id}">
-    //     <h2>${data[i].title.rendered}</h2>
-    //     <img src=${data[i].featured_media_src_url}>
-    //     <p>${data[i].excerpt.rendered}</p>
-    // </a>`;
-    slideContainer.innerHTML += `
-    <li class="slide" ${i === 0 ? "data-active='true'" : ""}>
-    <a class="project-items" href="spesific-projects.html?id=${
-      data[i].id
-    }"><img src="${data[i].featured_media_src_url}" alt="Nature Image #2"></a>
-    </li>`;
+    for (let i = 0; i < data.length; i++) {
+      // carouselImages.innerHTML += `
+      // <a class="project-items" href="spesific-projects.html?id=${data[i].id}">
+      //     <h2>${data[i].title.rendered}</h2>
+      //     <img src=${data[i].featured_media_src_url}>
+      //     <p>${data[i].excerpt.rendered}</p>
+      // </a>`;
+      slideContainer.innerHTML += `
+      <li class="slide" ${i === 0 ? "data-active='true'" : ""}>
+      <a class="project-items" href="spesific-projects.html?id=${
+        data[i].id
+      }"><img src="${data[i].featured_media_src_url}" alt="Nature Image #2"></a>
+      </li>`;
 
-    // projectsContainer.innerHTML += `<h3>${data[i].title.rendered}</h3>`;
+      // projectsContainer.innerHTML += `<h3>${data[i].title.rendered}</h3>`;
 
-    // container.innerHTML +=
-    // <a class="project-items" href="spesific-projects.html?id=${data[i].id}">
-    //     <h2>${data[i].title.rendered}</h2>
-    //     <img src=${data[i].featured_media_src_url}>
-    //     <p>${data[i].excerpt.rendered}</p>
-    // </a>`;
+      // container.innerHTML +=
+      // <a class="project-items" href="spesific-projects.html?id=${data[i].id}">
+      //     <h2>${data[i].title.rendered}</h2>
+      //     <img src=${data[i].featured_media_src_url}>
+      //     <p>${data[i].excerpt.rendered}</p>
+      // </a>`;
+    }
+  } catch (error) {
+    console.log(error);
   }
 }
 

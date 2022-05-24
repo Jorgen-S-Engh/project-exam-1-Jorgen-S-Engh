@@ -531,7 +531,6 @@ footer {
     flex-direction: column;
     align-items: center;
     padding:50px;
-    /* border:solid 2px var(--white); */
     background-color: var(--project-blue);
     color:var(--white);
 }
@@ -552,7 +551,7 @@ footer {
 
 }
 
-form h2{
+/* form h2{
     text-align: center;
 }
 
@@ -575,7 +574,7 @@ form h1{
 input {
     height:50px;
     
-}
+} */
 
 
 /* SPESIFIC-PROJECT.HTML */
@@ -728,5 +727,67 @@ input {
 
 .more{
     margin: 30px;
+}
+
+
+/* CONTACT DESKTOP */
+
+@media only screen and (min-width: 600px) {
+
+    input{
+        height: 50px;
+        width:100%;
+    }
+
+    .form{
+        width:100%;
+        /* height:100%; */
+        border: solid 1px black;
+    }
+    
+    .form{
+        width:100%;
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+        grid-template-areas: 
+        "text-container name-container name-container"
+        "text-container email-container subject-container"
+        ". message-container message-container"
+        ". btn-contact btn-contact";
+    }
+
+    .text-container{
+        grid-area: text-container;
+    }
+    
+    .name-container{
+        grid-area: name-container;
+    }
+    
+    .email-container{
+        grid-area: email-container;
+    }
+    
+    .number-container{
+        grid-area: subject-container;
+    }
+    
+    .btn-contact{
+        grid-area: btn-contact;
+    }
+
+    .message-container{
+        grid-area: message-container;
+        width:100%;
+    }
+
+    #name {
+        width:100%;
+        height:50px;
+    }
+
+
+
 }
 

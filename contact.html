@@ -38,7 +38,7 @@
       </div>
     </header>
     <main>
-      <div class="contact-text-container">
+      <!-- <div class="contact-text-container">
         <div class="contact-text">
           <h1>La oss ta en Uforpliktende samtale</h1>
           <p>
@@ -48,38 +48,47 @@
             fokusområder.
           </p>
         </div>
-      </div>
+      </div> -->
       <div class="container-form">
-        <!-- <div class="success-message">
-            <p>Takk for din henvendelse!</p>
-            <p>Vi vil ta kontakt med deg innen kort tid</p>
-          </div> -->
         <form>
-          <h2>Kontakt oss</h2>
-          <input name="name" id="name" placeholder="Name (Required)" />
-          <div class="form-error" id="nameError"></div>
-          <input
-            name="text"
-            id="subject"
-            placeholder="Subject (Minimun 10 characters)"
-          />
-          <div class="form-error" id="subError"></div>
-          <input
-            name="email"
-            id="email"
-            placeholder="Email (Enter a valid email address)"
-          />
-          <div class="form-error" id="emailError"></div>
-          <input
-            name="address"
-            id="address"
-            placeholder="Address (Minimun 25 characters)"
-          />
-          <div class="form-error" id="adError"></div>
+          <div class="name-container">
+            <!-- <h2>Kontakt oss</h2> -->
+            <input name="name" id="name" placeholder="Name (Required)" />
+            <div class="form-error" id="nameError"></div>
+            <input
+              name="text"
+              id="subject"
+              placeholder="Subject (Minimun 10 characters)"
+            />
+            <div class="form-error" id="subError"></div>
+          </div>
+
+          <div class="email-container">
+            <input
+              name="email"
+              id="email"
+              placeholder="Email (Enter a valid email address)"
+            />
+            <div class="form-error" id="emailError"></div>
+          </div>
+          <div class="number-container">
+            <input
+              name="number"
+              id="number"
+              placeholder="number (Minimun 8 characters)"
+            />
+            <div class="form-error" id="adError"></div>
+          </div>
+          <div class="message-container">
+            <textarea id="text-area" name="text-area">
+              Din melding....
+              </textarea
+            >
+          </div>
         </form>
         <button class="btn-contact">KONTAKT OSS</button>
-        <a class="backMain" href="index.html">Tilbake til forsiden</a>
       </div>
+      <!-- <a class="backMain" href="index.html">Tilbake til forsiden</a> -->
     </main>
     <footer>
       <div class="footer-content">

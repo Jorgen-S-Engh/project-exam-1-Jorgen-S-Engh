@@ -6,28 +6,24 @@ const container = document.querySelector(".results-container");
 const headline = document.querySelector(".banner-container");
 const modal = document.querySelector(".modal-image-container");
 const modalPop = document.querySelector(".modal-popup");
+const projectText = document.querySelector(".text-content-project");
 
 const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/" + id;
 
-
-// HA MED TRY CATCH
 async function getApi() {
-  const response = await fetch(url);
-  const data = await response.json();
-  headline.innerHTML += `<h1>${data.title.rendered}`;
-  modal.innerHTML += `<img src="${data.featured_media_src_url}" alt="" />`;
-  modalPop.innerHTML += `<img src="${data.featured_media_src_url}" alt="" />`;
-  headline.style.backgroundImage = `url("${data.featured_media_src_url}")`;
-
-  // for (let i = 0; i < data.length; i++) {
-  //   console.log(data[i].title.rendered);
-  // }
-  // headline.innerHTML += `<h1>${data.title.rendered}`;
-
-  // container.innerHTML += `
-  //                       <h1>${data.title.rendered}</h1>
-  //                       <p>${data.excerpt.rendered}</p>
-  //                       <img src=${data.featured_media_src_url}>`;
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+    headline.innerHTML += `<h1>${data.title.rendered}</h1>`;
+    modal.innerHTML += `<img src="${data.featured_media_src_url}" alt="" />`;
+    modalPop.innerHTML += `<img src="${data.featured_media_src_url}" alt="" />`;
+    headline.style.backgroundImage = `url("${data.featured_media_src_url}")`;
+    document.title = `Prosjekt | ${data.title.rendered}`;
+    projectText.innerHTML += `${data.excerpt.rendered}`;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 getApi();
@@ -37,16 +33,13 @@ const closeModal = document.querySelector(".close-modal");
 
 modal.addEventListener("click", () => {
   modalPop.style.display = "block";
-  console.log("open")
 });
 
 // modalPop.addEventListener("click", ()=>{
 //   modalPop.style.display = "none";
 // })
 
-
-window.addEventListener("click", (e)=> {
-  console.log(e.target)
+window.addEventListener("click", (e) => {
   if (e.target === modalPop) {
     modalPop.style.display = "none";
   }
