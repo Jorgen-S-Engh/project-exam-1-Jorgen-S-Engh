@@ -729,19 +729,103 @@ input {
     margin: 30px;
 }
 
+/* CONTACT.HTML */
 
-/* CONTACT DESKTOP */
+.contact-body{
+    background-color:var(--main-blue);
+}
+
+.contact-main{
+    display:flex;
+    flex-direction: column-reverse;
+}
+
+
+
+
+
+
+
 
 @media only screen and (min-width: 600px) {
 
-    input{
+    /* CONTACT DESKTOP */
+
+    .contact-container{
+        display:flex;
+        flex-direction: column;
+        width:75%;
+        margin:50px;
+        align-items: center;
+        color:var(--white);
+        max-width:600px;
+
+    }
+
+    .text-container-contact{
+        width:50%;
+        display:flex;
+        flex-direction: column;
+        margin:50px;
+        max-width:500px;
+        color:var(--white);
+    }
+
+    .text-container-contact h2{
+        text-align: center;
+        margin: 10px 0px;
+    }
+
+    .field{
+        width:100%;
+        height:35px;
+        margin: 10px 0px;
+    }
+
+    .contact-main{
+        display:flex;
+        flex-direction: row;
+        margin:0 auto;
+    }
+
+    .btn-contact-form{
+        width:100px;
+    }
+
+    .text-area {
+        max-width:100%;
+        min-width:100%;
+        max-height:500px;
+        height:200px; 
+    }
+
+    .sec-para{
+        margin:25px 0px;
+    }
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+    /* input{
         height: 50px;
         width:100%;
     }
 
     .form{
         width:100%;
-        /* height:100%; */
+    
         border: solid 1px black;
     }
     
@@ -749,7 +833,7 @@ input {
         width:100%;
         display:grid;
         grid-template-columns: 1fr 1fr 1fr;
-        /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+ 
         grid-template-areas: 
         "text-container name-container name-container"
         "text-container email-container subject-container"
@@ -785,7 +869,9 @@ input {
     #name {
         width:100%;
         height:50px;
-    }
+    } */
+
+
 
 
 
