@@ -50,8 +50,10 @@
          <form class="contact-container">
             <h1>Kontakt oss</h1>
             <input type="text" class="field" placeholder="Navn" />
-            <input type="text" class="field" placeholder="E-post" />
-            <input type="text" class="field" placeholder="Tema" />
+            <div class="subject-email">
+              <input type="text" name="tema" class="field tema-field" placeholder="Tema"/>
+              <input type="text" name="e-post" class="field" placeholder="E-post" />
+            </div>
             <textarea placeholder="Melding" class="field text-area"></textarea>
             <button class="btn-contact btn-contact-form">Send</button>
          </form>
@@ -80,5 +82,6 @@
       </div>
     </footer>
     <script src="js\hamburger.js"></script>
+    <script src="js\contact.js"></script>
   </body>
 </html>
