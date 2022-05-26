@@ -778,10 +778,6 @@ input {
     color:var(--white);
 }
 
-.subject-email{
-    display:flex;
-    flex-direction: column; 
-}
 
 .field{
     width:100%;
@@ -798,6 +794,14 @@ input {
 
 .label-tema{
     /* display:none */
+}
+
+.error-form{
+    border: solid 2px red;
+}
+
+.correct-form{
+    border: solid 2px green;
 }
 
 
@@ -840,15 +844,12 @@ input {
         margin:25px 0px;
     }
 
-    .subject-email{
-        flex-direction: row;
-        width:100%;
-        justify-content: space-between;
-    }
 
-    .subject-email .field{
-        width:49%;
-    }
+    /* INDEX DESKTOP */
+
+
+
+
 
     
 

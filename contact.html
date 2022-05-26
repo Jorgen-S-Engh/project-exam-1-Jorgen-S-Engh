@@ -11,7 +11,7 @@
     ></script>
     <title>Document</title>
   </head>
-  <body>
+  <body class="contact-body">
     <header>
       <a href="index.html"
         ><img
@@ -37,59 +37,27 @@
         </ul>
       </div>
     </header>
-    <main>
-      <!-- <div class="contact-text-container">
-        <div class="contact-text">
-          <h1>La oss ta en Uforpliktende samtale</h1>
-          <p>
-            Introduksjon av salgsansvarlig, med direkte oppfordring til
-            henvendelse. Mer utfyllende tekst rundt hvordan vi jobber, hvordan
-            type samarbeider vi har fokus på, mål for fremtiden og andre
-            fokusområder.
+    <main class="contact-main">
+      <div class="text-container-contact">
+        <h2>La oss ta en uforpliktet prat</h2>
+        <p>Introduksjon av salgsansvarlig,
+          med direkte oppfordring til henvendelse.
+          
+          Mer utfyllende tekst rundt hvordan vi jobber, hvordan type samarbeider vi har fokus på, mål for fremtiden og andre fokusområder.
           </p>
+          <p class="sec-para">Tekst rundt vekst og fokus på å ansette flere kloke hoder. direkte kontaktinfo til Tor Åge og eventuelt Erik. Ved klikk på knapp under kommer de direkte i mailen med mail til gjeldene i dette feltet.</p>
         </div>
-      </div> -->
-      <div class="container-form">
-        <form>
-          <div class="name-container">
-            <!-- <h2>Kontakt oss</h2> -->
-            <input name="name" id="name" placeholder="Name (Required)" />
-            <div class="form-error" id="nameError"></div>
-            <input
-              name="text"
-              id="subject"
-              placeholder="Subject (Minimun 10 characters)"
-            />
-            <div class="form-error" id="subError"></div>
-          </div>
-
-          <div class="email-container">
-            <input
-              name="email"
-              id="email"
-              placeholder="Email (Enter a valid email address)"
-            />
-            <div class="form-error" id="emailError"></div>
-          </div>
-          <div class="number-container">
-            <input
-              name="number"
-              id="number"
-              placeholder="number (Minimun 8 characters)"
-            />
-            <div class="form-error" id="adError"></div>
-          </div>
-          <div class="message-container">
-            <textarea id="text-area" name="text-area">
-              Din melding....
-              </textarea
-            >
-          </div>
-        </form>
-        <button class="btn-contact">KONTAKT OSS</button>
+         <form class="contact-container">
+            <h1>Kontakt oss</h1>
+            <input name="name" type="text" class="field name-field" placeholder="Navn (minst 5 tegn)" />
+            <input type="text" name="tema" class="field tema-field" placeholder="Tema (minst 15 tegn)"/>
+            <input type="text" name="e-post" class="field" placeholder="E-post" />
+            <textarea placeholder="Melding" class="field text-area"></textarea>
+            <button class="btn-contact btn-contact-form">Send</button>
+         </form>
       </div>
-      <!-- <a class="backMain" href="index.html">Tilbake til forsiden</a> -->
     </main>
+
     <footer>
       <div class="footer-content">
         <h3>Vår kompetanse, dine muligheter.</h3>
@@ -112,5 +80,6 @@
       </div>
     </footer>
     <script src="js\hamburger.js"></script>
+    <script src="js\contact.js"></script>
   </body>
 </html>
