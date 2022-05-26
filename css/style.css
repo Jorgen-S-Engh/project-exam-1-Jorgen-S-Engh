@@ -748,6 +748,7 @@ input {
 
 .contact-container{
     display:flex;
+    position: relative;
     flex-direction: column;
     width:100%;
     margin:20px;
@@ -792,17 +793,39 @@ input {
     min-height:150px;
 }
 
-.label-tema{
-    /* display:none */
+.form-item{
+    width:100%;
+    position:relative;
 }
 
-.error-form{
-    border: solid 2px red;
+.form-item i {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
 }
 
-.correct-form{
-    border: solid 2px green;
+.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
 }
+
+.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: hidden;
+}
+
+.form-error{
+    color:#e74c3c;
+    font-weight: bold;
+    display:none;
+}
+
+
+
+
+
+
 
 
 @media only screen and (min-width: 600px) {

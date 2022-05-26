@@ -42,17 +42,36 @@
         <h2>La oss ta en uforpliktet prat</h2>
         <p>Introduksjon av salgsansvarlig,
           med direkte oppfordring til henvendelse.
-          
           Mer utfyllende tekst rundt hvordan vi jobber, hvordan type samarbeider vi har fokus på, mål for fremtiden og andre fokusområder.
           </p>
           <p class="sec-para">Tekst rundt vekst og fokus på å ansette flere kloke hoder. direkte kontaktinfo til Tor Åge og eventuelt Erik. Ved klikk på knapp under kommer de direkte i mailen med mail til gjeldene i dette feltet.</p>
         </div>
          <form class="contact-container">
             <h1>Kontakt oss</h1>
-            <input name="name" type="text" class="field name-field" placeholder="Navn (minst 5 tegn)" />
-            <input type="text" name="tema" class="field tema-field" placeholder="Tema (minst 15 tegn)"/>
-            <input type="text" name="e-post" class="field" placeholder="E-post" />
-            <textarea placeholder="Melding" class="field text-area"></textarea>
+            <div class="form-item">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <div class="form-error name-error">Full ut navn, mer enn 5 tegn</div>
+              <input name="name" type="text" class="field name-field" placeholder="Navn (minst 5 tegn)" />
+            </div>
+            <div class="form-item">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <div class="form-error tema-error">Full ut tema, mer enn 15 tegn</div>
+              <input type="text" name="tema" class="field tema-field" placeholder="Tema (minst 15 tegn)"/>
+            </div>
+            <div class="form-item">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <div class="form-error email-error">Full ut en valid e-post adresse</div>
+              <input type="text" name="e-post" class="field email-field" placeholder="E-post" />
+            </div>
+            <div class="form-item">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <div class="form-error message-error">Full ut din melding, mer enn 25 tegn </div>
+              <textarea placeholder="Melding" class="field text-area"></textarea>
+            </div>
             <button class="btn-contact btn-contact-form">Send</button>
          </form>
       </div>

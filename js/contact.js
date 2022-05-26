@@ -1,25 +1,64 @@
 // document.querySelector(".tema-field").placeholder = "new text for tema";
 
 // element.classList.add("otherclass");
+const form = document.querySelector("form");
 const name = document.querySelector(".name-field");
 const tema = document.querySelector(".tema-field");
-const form = document.querySelector("form");
+const email = document.querySelector(".email-field");
+const message = document.querySelector(".text-area");
+const formError = document.querySelector(".form-error");
+const nameError = document.querySelector(".name-error");
+const temaError = document.querySelector(".tema-error");
+const emailError = document.querySelector(".email-error");
+const messageError = document.querySelector(".message-error");
 
 function validateForm() {
   event.preventDefault();
+  let counter = 0;
 
-  if (name.value.trim().length <= 6) {
-    name.classList.add("error-form");
-    // document.querySelector(".name-field").value = "";
+  if (checkName(name.value, 5)) {
+    nameError.style.display = "none";
+    counter++;
   } else {
-    name.classList.add("correct-form");
+    nameError.style.display = "block";
+  }
+  if (checkName(tema.value, 15)) {
+    temaError.style.display = "none";
+    counter++;
+  } else {
+    temaError.style.display = "block";
+  }
+  if (validateEmail(email.value)) {
+    emailError.style.display = "none";
+    counter++;
+  } else {
+    emailError.style.display = "block";
+  }
+  if (checkName(address.value, 24)) {
+    messageError.style.display = "none";
+    counter++;
+  } else {
+    messageError.style.display = "block";
   }
 
-  if (tema.value.length > 15) {
-    name.classList.add("error-form");
-    document.querySelector(".tema-field").value = "";
+  // if (counter === 4) {
+  //   success.style.display = "block";
+  // } else {
+  //   success.style.display = "none";
+  // }
+}
+form.addEventListener("submit", validateForm);
+
+function checkName(value, len) {
+  if (value.trim().length > len) {
+    return true;
+  } else {
+    return false;
   }
 }
 
-// https://www.youtube.com/watch?v=rsd4FNGTRBw
-// https://codepen.io/FlorinPop17/pen/OJJKQeK
+function validateEmail(email) {
+  const regEx = /\S+@\S+\.\S+/;
+  const patternMatches = regEx.test(email);
+  return patternMatches;
+}
