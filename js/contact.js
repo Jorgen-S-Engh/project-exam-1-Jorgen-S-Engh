@@ -11,6 +11,7 @@ const nameError = document.querySelector(".name-error");
 const temaError = document.querySelector(".tema-error");
 const emailError = document.querySelector(".email-error");
 const messageError = document.querySelector(".message-error");
+const messageSuccess = document.querySelector(".message-success");
 
 function validateForm() {
   event.preventDefault();
@@ -18,34 +19,37 @@ function validateForm() {
 
   if (checkName(name.value, 5)) {
     nameError.style.display = "none";
+
     counter++;
   } else {
     nameError.style.display = "block";
   }
   if (checkName(tema.value, 15)) {
     temaError.style.display = "none";
+
     counter++;
   } else {
     temaError.style.display = "block";
   }
   if (validateEmail(email.value)) {
     emailError.style.display = "none";
+
     counter++;
   } else {
     emailError.style.display = "block";
   }
-  if (checkName(address.value, 24)) {
+  if (checkName(message.value, 25)) {
     messageError.style.display = "none";
     counter++;
   } else {
     messageError.style.display = "block";
   }
 
-  // if (counter === 4) {
-  //   success.style.display = "block";
-  // } else {
-  //   success.style.display = "none";
-  // }
+  if (counter === 4) {
+    messageSuccess.style.display = "block";
+  } else {
+    messageSuccess.style.display = "none";
+  }
 }
 form.addEventListener("submit", validateForm);
 

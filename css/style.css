@@ -109,7 +109,7 @@ header {
 /* VIDEOS  */
 
 .video-container {
-    
+    position:relative;
     width: 100%;
 }
 
@@ -124,8 +124,10 @@ header {
     padding: 15px;
     background-color: var(--light-green);
     position:absolute;
-    top:200px;
-    /* opacity: 80%; */
+    width:100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .video-banner h1{
@@ -741,9 +743,8 @@ input {
     align-items: center;
 }
 
-.contact-container {
-    display:flex;
-    flex-direction: column;
+.contact-container h1{
+    color:var(--white);
 }
 
 .contact-container{
@@ -753,7 +754,6 @@ input {
     width:100%;
     margin:20px;
     align-items: center;
-    color:var(--white);
     max-width:300px;
 }
 
@@ -784,6 +784,7 @@ input {
     width:100%;
     height:40px;
     margin: 5px 0px;
+    /* background-color:var(--main-blue); */
 }
 
 .text-area {
@@ -795,25 +796,9 @@ input {
 
 .form-item{
     width:100%;
-    position:relative;
 }
 
-.form-item i {
-	visibility: hidden;
-	position: absolute;
-	top: 40px;
-	right: 10px;
-}
 
-.fa-check-circle {
-	color: #2ecc71;
-	visibility: visible;
-}
-
-.fa-exclamation-circle {
-	color: #e74c3c;
-	visibility: hidden;
-}
 
 .form-error{
     color:#e74c3c;
@@ -821,14 +806,28 @@ input {
     display:none;
 }
 
+.message-success{
+    background-color:#2ecc71;
+    padding:35px;
+    /* position:absolute; */
+    width:100%;
+    top: 0px;
+    color:var(--white);
+    width:100%;
+    text-align: center;
+    display:none;
+    flex: 3;
+    
+}
+
+.message-success p{
+    margin:10px;
+}
 
 
 
 
-
-
-
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 750px) {
 
     /* CONTACT DESKTOP */
 
@@ -870,11 +869,50 @@ input {
 
     /* INDEX DESKTOP */
 
+    .menu-item{
+        transition: transform .2s;
+    }
+
+    .menu-item:hover{
+        transform: scale(1.5);
+    }
+
+    .fa-bars, .fa-xmark{
+        font-size:2rem;
+    }
+
+    .logo{
+        width:150px;
+    }
+
+    .video-container{
+        height:500px;
+        
+    }
+
+    .video-container video{
+        height:500px;
+    }
+
+    .video-banner{
+        max-width:750px;
+    }
+
+    .video-banner h1{
+        font-size:2rem;
+    }
+
+    .first-text-section{
+        background-image: url("../img/first-section-index.jpg");
+    }
 
 
 
 
-    
+
+
+
+
 
 }
 

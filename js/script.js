@@ -40,25 +40,25 @@ getApi();
 
 // video slider
 
-let i = 0;
-const videos = [];
+// let i = 0;
+// const videos = [];
 
-function videoSlide() {
-  videos[0] = "videos/video1.mp4";
-  videos[1] = "videos/video2.mp4";
-  videos[2] = "videos/video3.mp4";
-  document.querySelector("video").src = videos[i];
+// function videoSlide() {
+//   videos[0] = "videos/video1.mp4";
+//   videos[1] = "videos/video2.mp4";
+//   videos[2] = "videos/video3.mp4";
+//   document.querySelector("video").src = videos[i];
 
-  if (i < videos.length - 1) {
-    i++;
-  } else {
-    i = 0;
-  }
+//   if (i < videos.length - 1) {
+//     i++;
+//   } else {
+//     i = 0;
+//   }
 
-  setTimeout(videoSlide, 8000);
-}
+//   setTimeout(videoSlide, 8000);
+// }
 
-videoSlide();
+// videoSlide();
 
 // KARUSELL
 
