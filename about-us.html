@@ -13,18 +13,21 @@
   </head>
   <body>
     <header>
-      <a href="index.html"><img
-        class="logo"
-        src="icons\ameta-logo-hvit-f.svg"
-        alt="Ameta sin logo"
+      <a href="index.html"
+        ><img
+          class="logo"
+          src="icons\ameta-logo-hvit-f.svg"
+          alt="Ameta sin logo"
       /></a>
       <i class="fa-solid fa-bars"></i>
       <div class="menu">
         <i class="fa-solid fa-xmark"></i>
         <ul>
-          <li><a class="menuItem" href="projects.html">PROSJEKTER</a></li>
-          <li><a class="menuItem" href="about-us.html">OM OSS</a></li>
-          <li><a class="menuItem" href="contact.html">KONTAKT OSS</a></li>
+          <li class="menu-item"><a href="projects.html">PROSJEKTER</a></li>
+          <li class="menu-item"><a href="about-us.html">OM OSS</a></li>
+          <li class="menu-item">
+            <a class="menu-item" href="contact.html">KONTAKT OSS</a>
+          </li>
           <li>
             <a href="index.html"
               ><img
@@ -36,26 +39,26 @@
         </ul>
       </div>
     </header>
-    <main class="om-oss-main">
-      <div class="om-oss">
-        <h1>OM OSS
-        </h1>
-        <p>Vi er et raskt voksende programvareselskap med kontor i Kristiansand.Vi lager programvare fortrinnsvis for bruk i infrastrukturprosjekter ogi den «Blå næringen» - bidrar til en bærekraftig utviklingbasert på havets ressurser.</p>
-        <p>I tett samarbeid med våre kunder har vi utviklet en All In One Plattform – en unik skybasert SaaS – plattform som tar imot alle formater, forener og kommuniserer data på tvers av dagens «siloer».Ikke bare en IOT-plattform, men også en plattform for Stor Data, operative data og annen programvare. Ved å sammenstille data fra ulike kilder, åpnes en verden for betydeligkundeverdi.</p>
-        <img src="img\pexels-thisisengineering-3861972 (1).jpg" alt="">
-        
-        <h2>HISTORIE</h2>
-        <p>Vi ble etablert i 2016 med navnet Smart Inspection AS, som vi nå skiller oss ut ifra og får som en søster. Vi skal stå tett sammensom familie, da det gir gode synergier. SmartInspection AS besitter mye god geomatikk – kunnskap, som gjør oss i stand til å være i fremste rekke på å forstå betydningen avgeorefererte objekter og å kunne knytte metadata på objektnivå. BIM, Laserskanning, 3D modellering, Asbuilt og digitale tvillinger erområder vi kan samhandle på til beste for kundene våre. Hovedgrunnentil at vi blir søsken, er at begge skal skjerpe sitt fokus.</p>
-        <p>SmartInspection skal bli enda sterke på tjenester innen faget geomatikkog innovere for mer digitalisering. AmetaAS med sin fantastiske kompetanse og tjenesteplattform Ameta SaaS, skal sammen med partnere vokse inn i nye markeder.</p>
-        <img src="img\stock-photo-creative-digital-business-screen-background-technology-innovation-and-media-concept-d-rendering-744577681.jpg" alt="">
-    
+    <main class="about-us-container">
+        <div class="about-us-text">
+          <h1>OM OSS</h1>
+          <p>Vi er et raskt voksende programvareselskap med kontor i Kristiansand.Vi lager programvare fortrinnsvis for bruk i infrastrukturprosjekter ogi den «Blå næringen» - bidrar til en bærekraftig utviklingbasert på havets ressurser.</p>
+          <p>I tett samarbeid med våre kunder har vi utviklet en All In One Plattform – en unik skybasert SaaS – plattform som tar imot alle formater, forener og kommuniserer data på tvers av dagens «siloer».Ikke bare en IOT-plattform, men også en plattform for Stor Data, operative data og annen programvare. Ved å sammenstille data fra ulike kilder, åpnes en verden for betydeligkundeverdi.</p>
+        </div>
+        <div class="about-us-img">
+          <img src="img\pexels-thisisengineering-3861972 (1).jpg" alt="">
+        </div>
+          <div class="history-text">
+            <h2>HISTORIE</h2>
+            <p>Vi ble etablert i 2016 med navnet Smart Inspection AS, som vi nå skiller oss ut ifra og får som en søster. Vi skal stå tett sammensom familie, da det gir gode synergier. SmartInspection AS besitter mye god geomatikk – kunnskap, som gjør oss i stand til å være i fremste rekke på å forstå betydningen avgeorefererte objekter og å kunne knytte metadata på objektnivå. BIM, Laserskanning, 3D modellering, Asbuilt og digitale tvillinger erområder vi kan samhandle på til beste for kundene våre. Hovedgrunnentil at vi blir søsken, er at begge skal skjerpe sitt fokus.</p>
+            <p>SmartInspection skal bli enda sterke på tjenester innen faget geomatikkog innovere for mer digitalisering. AmetaAS med sin fantastiske kompetanse og tjenesteplattform Ameta SaaS, skal sammen med partnere vokse inn i nye markeder.</p>
+          </div>
+          <div class="history-img">
+            <img src="img\stock-photo-creative-digital-business-screen-background-technology-innovation-and-media-concept-d-rendering-744577681.jpg" alt="">
+          </div>
+        </div>
+
       </div>
-      <div class="historie"</div>
-
-
-
-
-
     </main>
     <footer>
       <div class="footer-content">
@@ -79,5 +82,6 @@
       </div>
     </footer>
     <script src="js/script.js"></script>
+    <script src="js\hamburger.js"></script>
   </body>
 </html>

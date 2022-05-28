@@ -52,20 +52,46 @@ morePostsButton.addEventListener("click", async () => {
     morePostsButton.style.display = "none";
 
     for (let i = 0; i < data.length; i++) {
-      morePostsContainer.innerHTML += `
-            <a href="spesific-projects.html?id=${data[i].id}">
-              <div class="project-items">
-                <div class= project-img>
-                  <img src="${data[i].featured_media_src_url}" alt="" />
-                </div>
-               <div class="project-card">
-                <h3>${data[i].title.rendered}</h3>
-                <p>Short description</p>  
-               </div>
-              </div>
-            </a>`;
+      projectsContainer.innerHTML += `
+      <a href="spesific-projects.html?id=${data[i].id}">
+        <div class="project-items">
+          <div class= project-img>
+            <img src="${data[i].featured_media_src_url}" alt="" />
+          </div>
+         <div class="project-card">
+          <h3>${data[i].title.rendered}</h3>
+          <p>${data[i].excerpt.rendered}</p>  
+          <button class="btn-spesific-project">Les mer</button>
+         </div>
+        </div>
+      </a>`;
     }
   } catch (error) {
     console.log("error");
   }
 });
+
+// morePostsButton.addEventListener("click", async () => {
+//   try {
+//     const response = await fetch(url + "?per_page=100&offset=10");
+//     const data = await response.json();
+//     morePostsButton.style.display = "none";
+
+//     for (let i = 0; i < data.length; i++) {
+//       morePostsContainer.innerHTML += `
+//             <a href="spesific-projects.html?id=${data[i].id}">
+//               <div class="project-items">
+//                 <div class= project-img>
+//                   <img src="${data[i].featured_media_src_url}" alt="" />
+//                 </div>
+//                <div class="project-card">
+//                 <h3>${data[i].title.rendered}</h3>
+//                 <p>Short description</p>
+//                </div>
+//               </div>
+//             </a>`;
+//     }
+//   } catch (error) {
+//     console.log("error");
+//   }
+// });
