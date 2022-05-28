@@ -8,6 +8,7 @@ async function getApi() {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log(data);
 
     for (let i = 0; i < data.length; i++) {
       // carouselImages.innerHTML += `
@@ -24,8 +25,8 @@ async function getApi() {
                 </div>
                <div class="project-card">
                 <h3>${data[i].title.rendered}</h3>
-                <p>Short description</p>  
-                <button class="btn-contact">&#8658</button>
+                <p>${data[i].excerpt.rendered}</p>  
+                <button class="btn-spesific-project">Les mer</button>
                </div>
               </div>
             </a>`;

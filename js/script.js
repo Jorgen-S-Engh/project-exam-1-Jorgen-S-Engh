@@ -7,6 +7,7 @@ async function getApi() {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log(data);
 
     for (let i = 0; i < data.length; i++) {
       // carouselImages.innerHTML += `
