@@ -1,6 +1,6 @@
 const projectsContainer = document.querySelector(".project-container");
 const morePostsButton = document.querySelector(".more");
-const morePostsContainer = document.querySelector(".more-post-container");
+// const morePostsContainer = document.querySelector(".more-post-container");
 
 let url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
 

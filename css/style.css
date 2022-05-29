@@ -783,6 +783,33 @@ footer {
     margin:10px;
 }
 
+/* NEW KARU */
+
+.card {
+    /* other
+       styles */
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .card.view { /* when the card contains .view */
+    opacity: 1;
+    pointer-events: all;
+    position: relative;
+  }
+
+
+  .card-image{
+      width:300px;
+      position:absolute;
+  }
+
+  .card-image img{
+      width:100%;
+      object-fit: cover;
+  }
+  
+
 
 
 
