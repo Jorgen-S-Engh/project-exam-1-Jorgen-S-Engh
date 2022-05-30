@@ -1,43 +1,30 @@
-const container = document.querySelector(".api-container");
-const slideContainer = document.querySelector(".slide-container");
-const projectsContainer = document.querySelector(".project-container");
-const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
+// const container = document.querySelector(".api-container");
+// const slideContainer = document.querySelector(".slide-container");
+// const projectsContainer = document.querySelector(".project-container");
+// const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
 
-async function getApi() {
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
+// async function getApi() {
+//   try {
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     console.log(data);
 
-    for (let i = 0; i < data.length; i++) {
-      // carouselImages.innerHTML += `
-      // <a class="project-items" href="spesific-projects.html?id=${data[i].id}">
-      //     <h2>${data[i].title.rendered}</h2>
-      //     <img src=${data[i].featured_media_src_url}>
-      //     <p>${data[i].excerpt.rendered}</p>
-      // </a>`;
-      slideContainer.innerHTML += `
-      <li class="slide" ${i === 0 ? "data-active='true'" : ""}>
-      <a class="project-items" href="spesific-projects.html?id=${
-        data[i].id
-      }"><img src="${data[i].featured_media_src_url}" alt="Nature Image #2"></a>
-      </li>`;
+//     for (let i = 0; i < data.length; i++) {
 
-      // projectsContainer.innerHTML += `<h3>${data[i].title.rendered}</h3>`;
+//       slideContainer.innerHTML += `
+//       <li class="slide" ${i === 0 ? "data-active='true'" : ""}>
+//       <a class="project-items" href="spesific-projects.html?id=${
+//         data[i].id
+//       }"><img src="${data[i].featured_media_src_url}" alt="Nature Image #2"></a>
+//       </li>`;
 
-      // container.innerHTML +=
-      // <a class="project-items" href="spesific-projects.html?id=${data[i].id}">
-      //     <h2>${data[i].title.rendered}</h2>
-      //     <img src=${data[i].featured_media_src_url}>
-      //     <p>${data[i].excerpt.rendered}</p>
-      // </a>`;
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
-getApi();
+// getApi();
 
 // video slider
 
@@ -82,3 +69,49 @@ getApi();
 //     delete activeSlide.dataset.active;
 //   });
 // });
+
+
+// final Carousel
+
+let slidePosition = 0;
+const slides = document.getElementsByClassName('carousel__item');
+const totalSlides = slides.length;
+
+
+
+document.getElementById('carousel__button--next').addEventListener("click", function() {
+    moveToNextSlide();
+  });
+document.getElementById('carousel__button--prev').addEventListener("click", function() {
+    moveToPrevSlide();
+  });
+
+function updateSlidePosition() {
+  for (let slide of slides) {
+    slide.classList.remove('carousel__item--visible');
+    slide.classList.add('carousel__item--hidden');
+  }
+
+  slides[slidePosition].classList.add('carousel__item--visible');
+}
+
+function moveToNextSlide() {
+  if (slidePosition === totalSlides - 1) {
+    slidePosition = 0;
+  } else {
+    slidePosition++;
+  }
+
+  updateSlidePosition();
+}
+
+function moveToPrevSlide() {
+  if (slidePosition === 0) {
+    slidePosition = totalSlides - 1;
+  } else {
+    slidePosition--;
+  }
+
+  updateSlidePosition();
+}
+
