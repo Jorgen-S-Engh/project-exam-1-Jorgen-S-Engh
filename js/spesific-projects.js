@@ -20,7 +20,7 @@ async function getApi() {
     modalPop.innerHTML += `<img src="${data.featured_media_src_url}" alt="" />`;
     headline.style.backgroundImage = `url("${data.featured_media_src_url}")`;
     document.title = `Prosjekt | ${data.title.rendered}`;
-    projectText.innerHTML += `${data.excerpt.rendered}`;
+    projectText.innerHTML += `${data.content.rendered}`;
   } catch (error) {
     console.log(error);
   }
@@ -43,4 +43,12 @@ window.addEventListener("click", (e) => {
   if (e.target === modalPop) {
     modalPop.style.display = "none";
   }
+});
+
+// Funker ikke, vet ikke hvorfor
+const zoom = document.querySelector(".fa-magnifying-glass");
+
+modal.addEventListener("mouseover", () => {
+  zoom.style.visibility = "visible";
+  console.log("mouse over");
 });

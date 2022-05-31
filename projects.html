@@ -23,9 +23,13 @@
       <div class="menu">
         <i class="fa-solid fa-xmark"></i>
         <ul>
-          <li><a class="menuItem" href="projects.html">PROSJEKTER</a></li>
-          <li><a class="menuItem" href="about-us.html">OM OSS</a></li>
-          <li><a class="menuItem" href="contact.html">KONTAKT OSS</a></li>
+          <li class="current menu-item">
+            <a href="projects.html">PROSJEKTER</a>
+          </li>
+          <li class="menu-item"><a href="about-us.html">OM OSS</a></li>
+          <li class="menu-item">
+            <a class="menu-item" href="contact.html">KONTAKT OSS</a>
+          </li>
           <li>
             <a href="index.html"
               ><img
@@ -38,14 +42,18 @@
       </div>
     </header>
     <main>
-      <input type="search" id="seach-field" />
-      <button class="search-button">Søk</button>
-      <button class="remove-search">Fjern Søk</button>
+      <div class="search-container">
+        <input type="search" id="search-field" placeholder="Søk prosjekter" />
+        <div class="search-button-container">
+          <button class="btn search-button">Søk</button>
+          <button class="btn remove-search">Fjern Søk</button>
+        </div>
+      </div>
 
       <h1 class="projects-headline">Prosjekter</h1>
       <div class="project-container"></div>
       <div class="project-container more-post-container">
-        <button class="more btn-contact">SE FLERE</button>
+        <button class="more btn">SE FLERE</button>
       </div>
     </main>
 

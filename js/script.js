@@ -1,7 +1,30 @@
 // const container = document.querySelector(".api-container");
 // const slideContainer = document.querySelector(".slide-container");
 // const projectsContainer = document.querySelector(".project-container");
+
+// const carouselItem = document.querySelectorAll(".carousel-item");
+// const projectItem = document.querySelectorAll(".project-item");
 // const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
+
+// async function getApi() {
+//   try {
+//     const response = await fetch(url);
+//     const data = await response.json();
+
+//     for (let i = 0; i < data.length; i++) {
+//       carouselItem.innerHTML += `
+
+//       <div class="project-item">
+//         <img src="${data[i].featured_media_src_url}" />
+//         <div class="project-card"></div>;
+//       </div>`;
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// getApi();
 
 // async function getApi() {
 //   try {
@@ -10,14 +33,12 @@
 //     console.log(data);
 
 //     for (let i = 0; i < data.length; i++) {
-
-//       slideContainer.innerHTML += `
+//       carouselItem.innerHTML += `
 //       <li class="slide" ${i === 0 ? "data-active='true'" : ""}>
 //       <a class="project-items" href="spesific-projects.html?id=${
 //         data[i].id
 //       }"><img src="${data[i].featured_media_src_url}" alt="Nature Image #2"></a>
 //       </li>`;
-
 //     }
 //   } catch (error) {
 //     console.log(error);
@@ -70,29 +91,50 @@
 //   });
 // });
 
+const carsouselContainer = document.getElementsByClassName("carousel");
+const carouselItem = document.getElementsByClassName("carousel__item");
+const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
 
-// final Carousel
+async function getApi() {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    for (let i = 0; i < data.length; i++) {
+      carsouselContainer.innerHTML += `
+                                  <div class="carousel__item">
+                                      <img src="${data[i].featured_media_src_url}" alt="" />
+                                  </div>`;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getApi();
 
 let slidePosition = 0;
-const slides = document.getElementsByClassName('carousel__item');
+const slides = document.getElementsByClassName("carousel__item");
 const totalSlides = slides.length;
 
-
-
-document.getElementById('carousel__button--next').addEventListener("click", function() {
+document
+  .getElementById("carousel__button--next")
+  .addEventListener("click", function () {
     moveToNextSlide();
   });
-document.getElementById('carousel__button--prev').addEventListener("click", function() {
+document
+  .getElementById("carousel__button--prev")
+  .addEventListener("click", function () {
     moveToPrevSlide();
   });
 
 function updateSlidePosition() {
   for (let slide of slides) {
-    slide.classList.remove('carousel__item--visible');
-    slide.classList.add('carousel__item--hidden');
+    slide.classList.remove("carousel__item--visible");
+    slide.classList.add("carousel__item--hidden");
   }
 
-  slides[slidePosition].classList.add('carousel__item--visible');
+  slides[slidePosition].classList.add("carousel__item--visible");
 }
 
 function moveToNextSlide() {
@@ -114,4 +156,3 @@ function moveToPrevSlide() {
 
   updateSlidePosition();
 }
-

@@ -61,7 +61,7 @@ const searchBtn = document.querySelector(".search-button");
 const removeSearch = document.querySelector(".remove-search");
 
 // searchBtn.onclick = function () {
-//   const searchTerm = document.querySelector("#seach-field").value;
+//   const searchTerm = document.querySelector("#search-field").value;
 //   const searchUrl = mainUrl + `?search=${searchTerm}`;
 //   console.log(searchUrl);
 //   projectsContainer.innerHTML += "";
@@ -69,7 +69,7 @@ const removeSearch = document.querySelector(".remove-search");
 
 searchBtn.addEventListener("click", async () => {
   try {
-    const searchTerm = document.querySelector("#seach-field").value;
+    const searchTerm = document.querySelector("#search-field").value;
     const response = await fetch(mainUrl + `?search=${searchTerm}`);
     const data = await response.json();
 

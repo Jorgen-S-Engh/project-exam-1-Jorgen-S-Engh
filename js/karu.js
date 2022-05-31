@@ -1,22 +1,19 @@
-const prev = document.getElementById("prev");
-const next = document.getElementById("next");
+// const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
 
-console.log("test");
+// async function getApi() {
+//   try {
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     let images = [];
 
-// prev.addEventListener("click", function () {
-//   const currCard = document.querySelector(".card.view");
-//   const prevCard = currCard.previousElementSibling
-//     ? currCard.previousElementSibling
-//     : document.querySelector(".card-container").lastElementChild;
-// });
+//     for (let i = 0; i < data.length; i++) {
+//       images.push(`${data[i].featured_media_src_url}`);
+//     }
 
-prev.addEventListener("click", function () {
-  const currCard = document.querySelector(".card.view");
-  const prevCard = currCard.previousElementSibling;
+//     console.log(images);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
-  if (currCard.previousElementSibling) {
-    console.log(currCard.previousElementSibling);
-  } else {
-    console.log(document.querySelector(".card-container").lastElementChild);
-  }
-});
+// getApi();
