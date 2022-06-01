@@ -1,5 +1,4 @@
 // document.querySelector(".tema-field").placeholder = "new text for tema";
-
 // element.classList.add("otherclass");
 const form = document.querySelector("form");
 const name = document.querySelector(".name-field");

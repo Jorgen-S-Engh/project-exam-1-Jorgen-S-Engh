@@ -54,7 +54,7 @@
       <div class="main-content-project">
        
         <div class="text-content-project">
-          <h2>Prosjektbeskrivelse</h2>
+          <h2 class="spes-projects-headline">Prosjektbeskrivelse</h2>
         </div>
         <div class="modal-image-container">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -64,22 +64,28 @@
           <!-- <span class="close-modal">&times;</span> -->
         </div>
       </div>
-      <form onsubmit="postComment()" class="comment-form">
-        <input type="hidden" id="postId" value="3550" />
-        <div>
-          <label for="name">Name*</label>
-          <input type="text" id="comment-name" required="" />
-        </div>
-        <div>
-          <label for="email">Email*</label>
-          <input type="email" id="comment-email" required="" />
-        </div>
-        <div>
-          <label for="comment">Comment*</label>
-          <textarea id="comment-comment" required=""></textarea>
-        </div>
-        <input type="submit" value="Post comment!" id="post-comment"/>
-      </form>
+      <h2 class="comment-headline">Kommentarer</h2>
+      <div class="comment-container">
+        <form onsubmit="postComment()" class="comment-form">
+          <input type="hidden" id="postId" value="3550" />
+          <div>
+            <!-- <label for="name">Name*</label> -->
+            <input type="text" id="comment-name" required="" placeholder="Navn"/>
+          </div>
+          <div>
+            <!-- <label for="email">Email*</label> -->
+            <input type="email" id="comment-email" required="" placeholder="E-post"/>
+          </div>
+          <div>
+            <!-- <label for="comment">Comment*</label> -->
+            <textarea id="comment-comment" required="" placeholder="Din kommentar..."></textarea>
+          </div>
+          <input class="btn" type="submit" value="Post kommentar" id="post-comment"/>
+        </form>
+          <div class="comment-output">
+          </div>
+      </div>
+    
     </main>
 
     <footer>

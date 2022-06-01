@@ -61,7 +61,6 @@ async function getMedia() {
 
 getMedia();
 
-
 // ------------------ MODAL ------------------
 
 const closeModal = document.querySelector(".close-modal");
@@ -84,31 +83,36 @@ window.addEventListener("click", (e) => {
 // Funker ikke, vet ikke hvorfor. Skriv i rapporten
 const zoom = document.querySelector(".fa-magnifying-glass");
 
-modal.addEventListener("mouseover", () => {
+modal.addEventListener("moseover", () => {
   zoom.style.visibility = "visible";
   console.log("mouse over");
 });
 
-
-
-// ------------------  POST COMMNET ------------------
+// ------------------  POST COMMNET BLOGPOST------------------
 
 const commentUrl =
   "https://jorgeneksamen2022.online//wp-json/wp/v2/comments?post?=";
 const comment = document.querySelector("#comment-comment");
 const form = document.querySelector(".comment-form");
+const commnetOutput = document.querySelector(".comment-output");
 
 async function getComment() {
   try {
     console.log(id);
-    const response = await fetch(commentUrl+id);
+    const response = await fetch(commentUrl + id);
     const data = await response.json();
     console.log(data.length);
-    for(let i= 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
+      console.log(data[i.author_name]);
       console.log(data[i].content.rendered);
       createHTML(data[i]);
+      commnetOutput.innerHTML += `
+      <div class="comment-item">
+        <p><strong>${data[i].author_name} skrev:</strong> <p/>
+        <p>${data[i].content.rendered}</p>
+      </div>
+      `;
     }
-    
   } catch (error) {
     console.log(error);
   }
@@ -123,7 +127,6 @@ form.addEventListener("submit", postComment);
 
 getComment();
 
-
 function createHTML(post) {
   console.log(post.author_name);
   console.log(post.content.rendered);
@@ -134,34 +137,30 @@ const cEmail = document.querySelector("#comment-email");
 const cComment = document.querySelector("#comment-comment");
 const submit = document.querySelector("#post-comment");
 
-submit.onclick = function() {
+submit.onclick = function () {
   event.preventDefault();
 
-  
-    const data = JSON.stringify({
-      post: id,
-      author_name: cName.value,
-      author_email: cEmail.value,
-      content: cComment.value,
-    });
-    
-     ACTION_URL = "https://jorgeneksamen2022.online//wp-json/wp/v2/comments";
-    fetch(ACTION_URL, {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: data,
-    })
-      .then((response) => {
-        if (response.ok === true) {
+  const data = JSON.stringify({
+    post: id,
+    author_name: cName.value,
+    author_email: cEmail.value,
+    content: cComment.value,
+  });
 
-        }
-  
-        return response.json();
-      })
-      .then((object) => {
-      })
-      .catch(error => console.error('Error:', error));
-  
-}
+  ACTION_URL = "https://jorgeneksamen2022.online//wp-json/wp/v2/comments";
+  fetch(ACTION_URL, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: data,
+  })
+    .then((response) => {
+      if (response.ok === true) {
+      }
+
+      return response.json();
+    })
+    .then((object) => {})
+    .catch((error) => console.error("Error:", error));
+};

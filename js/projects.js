@@ -36,9 +36,6 @@ async function getApi(url) {
       class="logo-mobile-menu"
       src="icons/ameta-logo-hvit-f.svg"
       alt="Ameta sin logo"/></a>
-
-
-
     `;
 
     console.log("error");
@@ -76,13 +73,6 @@ morePostsButton.addEventListener("click", async () => {
 const searchBtn = document.querySelector(".search-button");
 const removeSearch = document.querySelector(".remove-search");
 
-// searchBtn.onclick = function () {
-//   const searchTerm = document.querySelector("#search-field").value;
-//   const searchUrl = mainUrl + `?search=${searchTerm}`;
-//   console.log(searchUrl);
-//   projectsContainer.innerHTML += "";
-// };
-
 searchBtn.addEventListener("click", async () => {
   try {
     const searchTerm = document.querySelector("#search-field").value;
@@ -113,5 +103,6 @@ searchBtn.addEventListener("click", async () => {
 });
 
 removeSearch.addEventListener("click", function () {
+  document.querySelector("#search-field").value = "";
   getApi(mainUrl);
 });
