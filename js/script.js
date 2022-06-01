@@ -90,7 +90,7 @@
 //     delete activeSlide.dataset.active;
 //   });
 // });
-
+let slides = document.getElementsByClassName("carousel__item");
 const carsouselContainer = document.getElementsByClassName("carousel");
 const carouselItem = document.getElementsByClassName("carousel__item");
 const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
@@ -101,32 +101,37 @@ async function getApi() {
     const data = await response.json();
 
     for (let i = 0; i < data.length; i++) {
-      carsouselContainer.innerHTML += `
-                                  <div class="carousel__item">
+      
+
+      console.log(data[i].featured_media_src_url)
+      carsouselContainer[0].innerHTML += `
+                                  <div class="carousel__item ${i === 0 ? "carousel__item--visible" : ""}">
                                       <img src="${data[i].featured_media_src_url}" alt="" />
                                   </div>`;
-    }
+    } 
+    // slides.document.getElementsByClassName("carousel__item");
   } catch (error) {
     console.log(error);
   }
+
 }
 
 getApi();
 
 let slidePosition = 0;
-const slides = document.getElementsByClassName("carousel__item");
+
 const totalSlides = slides.length;
 
-document
-  .getElementById("carousel__button--next")
-  .addEventListener("click", function () {
-    moveToNextSlide();
-  });
-document
-  .getElementById("carousel__button--prev")
-  .addEventListener("click", function () {
-    moveToPrevSlide();
-  });
+// document
+//   .getElementById("carousel__button--next")
+//   .addEventListener("click", function () {
+//     moveToNextSlide();
+//   });
+// document
+//   .getElementById("carousel__button--prev")
+//   .addEventListener("click", function () {
+//     moveToPrevSlide();
+//   });
 
 function updateSlidePosition() {
   for (let slide of slides) {
@@ -138,21 +143,31 @@ function updateSlidePosition() {
 }
 
 function moveToNextSlide() {
-  if (slidePosition === totalSlides - 1) {
+  if (slidePosition === slides.length - 1) {
     slidePosition = 0;
   } else {
     slidePosition++;
   }
+  console.log(slidePosition);
 
   updateSlidePosition();
 }
 
 function moveToPrevSlide() {
   if (slidePosition === 0) {
-    slidePosition = totalSlides - 1;
+    slidePosition = slides.length - 1;
   } else {
     slidePosition--;
   }
 
   updateSlidePosition();
 }
+
+
+window.addEventListener("click", (e) => {
+  if(e.target === document.querySelector("#carousel__button--next")) {
+    moveToNextSlide()
+}else if(e.target === document.querySelector("#carousel__button--prev")) {
+  moveToPrevSlide()
+}}
+);

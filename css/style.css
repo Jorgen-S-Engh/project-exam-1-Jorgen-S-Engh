@@ -415,7 +415,7 @@ footer {
   
   .carousel .carousel__item--visible {
     display: block;
-    animation: fadeVisibility 0.5s;
+    /* animation: fadeVisibility 0.5s; */
   }
   
   .carousel .carousel__actions {
@@ -444,7 +444,7 @@ footer {
     margin-right: 20px;
   }
   
-  @keyframes fadeVisibility {
+  /* @keyframes fadeVisibility {
     0% {
       opacity: 0;
     }
@@ -452,7 +452,7 @@ footer {
       opacity: 1;
       transform: opacity linear;
     }
-  }
+  } */
 
 
 
@@ -525,6 +525,25 @@ footer {
 
 }
 
+.error-message{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:var(--white);
+    font-size:1.5rem;
+    margin: 0 auto;
+}
+.error-message > *{
+    margin:30px 0px;
+}
+
+.error-message a{
+    color:var(--white);
+}
+
+
+
 
 
 /* SPESIFIC-PROJECT.HTML */
@@ -532,7 +551,7 @@ footer {
 .banner-container{
     width:100%;
     height:200px;
-    background-image:url("../img/pexels-aleksejs-bergmanis-681335 (1).jpg");
+    /* background-image:url("../img/pexels-aleksejs-bergmanis-681335 (1).jpg"); */
     background-repeat: no-repeat;
     background-position: center; 
     background-size: cover; 
@@ -800,7 +819,39 @@ footer {
     margin:10px;
 }
 
-/* NEW KARU */
+/* LOADER */
+
+.loader-container{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loader{
+    width:150px;
+    height: 150px;
+    border: solid 15px var(--light-green);
+    border-top: solid 15px var(--white);
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.logo-loader{
+    margin-top:20px;
+    width:150px;
+
+}
+
+
 
 
 @media only screen and (min-width: 750px) {
@@ -942,6 +993,8 @@ footer {
 
     /* SPESIFIC PROJECTS DESKTOP */
 
+  
+
     .banner-container h1{
         max-width:300px;
     }
@@ -950,8 +1003,9 @@ footer {
         display:flex;
         justify-content: center;
         align-items: center;
-        margin: 50px 0px;
         
+        max-width:1000px;
+        margin:50px auto;
     }
 
     .text-content-project{
@@ -972,15 +1026,12 @@ footer {
     .modal-image-container img{
         width: 100%;
         max-height: 400px;
-        object-fit: contain;
-        
+        object-fit: contain;  
     }
 
     .modal-popup{
         top:0;
         bottom:0;
-        
-
     }
 
     .modal-popup img{
@@ -995,9 +1046,9 @@ footer {
         color:var(--white);
         font-size:2.5rem;
         visibility: hidden;
-
         
     }
+
 
     
 

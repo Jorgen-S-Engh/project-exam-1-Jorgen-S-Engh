@@ -1,13 +1,15 @@
 const projectsContainer = document.querySelector(".project-container");
 const morePostsButton = document.querySelector(".more");
-
+const loader = document.querySelector(".loader-container");
 const mainUrl = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
-
+const errorMessage = document.querySelector(".error-message");
+const main = document.querySelector("main");
 async function getApi(url) {
   try {
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
+    loader.innerHTML = "";
 
     for (let i = 0; i < data.length; i++) {
       projectsContainer.innerHTML += `
@@ -25,6 +27,20 @@ async function getApi(url) {
             </a>`;
     }
   } catch (error) {
+    main.innerHTML = "";
+    errorMessage.innerHTML = `
+    <h2>Beklager noe gikk galt</h2>
+    <a href="index.html">Tilbake til forsiden</a>
+    <a href="index.html"
+    ><img
+      class="logo-mobile-menu"
+      src="icons/ameta-logo-hvit-f.svg"
+      alt="Ameta sin logo"/></a>
+
+
+
+    `;
+
     console.log("error");
   }
 }

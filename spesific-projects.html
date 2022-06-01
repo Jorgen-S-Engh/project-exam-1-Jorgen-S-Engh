@@ -33,17 +33,26 @@
               ><img
                 class="logo-mobile-menu"
                 src="icons\ameta-logo-hvit-f.svg"
-                alt=""
+                alt="Ameta sin logo"
             /></a>
           </li>
         </ul>
       </div>
     </header>
+    <div class="error-message"></div>
     <main class="spesific-project-main">
+      <div class="loader-container">
+        <div class="loader"></div>
+        <img
+          class="logo-loader"
+          src="icons\ameta-logo-hvit-f.svg"
+          alt="Ameta sin logo"
+        />
+      </div>
       <div class="banner-container">
-        <!-- <h1>Gartnerløkka</h1> -->
       </div>
       <div class="main-content-project">
+       
         <div class="text-content-project">
           <h2>Prosjektbeskrivelse</h2>
         </div>
@@ -55,12 +64,28 @@
           <!-- <span class="close-modal">&times;</span> -->
         </div>
       </div>
+      <form onsubmit="postComment()" class="comment-form">
+        <input type="hidden" id="postId" value="3550" />
+        <div>
+          <label for="name">Name*</label>
+          <input type="text" id="comment-name" required="" />
+        </div>
+        <div>
+          <label for="email">Email*</label>
+          <input type="email" id="comment-email" required="" />
+        </div>
+        <div>
+          <label for="comment">Comment*</label>
+          <textarea id="comment-comment" required=""></textarea>
+        </div>
+        <input type="submit" value="Post comment!" id="post-comment"/>
+      </form>
     </main>
 
     <footer>
       <div class="footer-content">
         <h3>Vår kompetanse, dine muligheter.</h3>
-        <img src="icons\ameta-logo-hvit-f.svg" alt="" />
+        <img src="icons\ameta-logo-hvit-f.svg" alt="Ameta sin logo" />
         <div class="footer-links">
           <a href=""><p>Kontakt oss</p></a>
           <a href=""><p>Ansatte</p></a>
