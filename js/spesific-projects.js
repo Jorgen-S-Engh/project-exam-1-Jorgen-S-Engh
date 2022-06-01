@@ -44,6 +44,8 @@ async function getApi() {
 
 getApi();
 
+// ------------------ MEDIA ALT-TEXT ------------------
+
 async function getMedia() {
   try {
     const response = await fetch(media);
@@ -58,6 +60,9 @@ async function getMedia() {
 }
 
 getMedia();
+
+
+// ------------------ MODAL ------------------
 
 const closeModal = document.querySelector(".close-modal");
 // SKRIV OM FEILEN I RAPPORTEN
@@ -86,7 +91,7 @@ modal.addEventListener("mouseover", () => {
 
 
 
-// POST COMMENT
+// ------------------  POST COMMNET ------------------
 
 const commentUrl =
   "https://jorgeneksamen2022.online//wp-json/wp/v2/comments?post?=";
@@ -150,14 +155,12 @@ submit.onclick = function() {
     })
       .then((response) => {
         if (response.ok === true) {
-          // Submitted successfully!
+
         }
   
         return response.json();
       })
       .then((object) => {
-        // Comment submission failed.
-        // Output `object.message` to see the error message.
       })
       .catch(error => console.error('Error:', error));
   
