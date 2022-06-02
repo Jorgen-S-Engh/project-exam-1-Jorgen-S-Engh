@@ -681,6 +681,8 @@ footer {
 }
 
 .comment-output{
+    height: 250px;
+    width:250px;
     margin: 25px 0px;
     color:var(--main-blue);
     max-width:500px;
