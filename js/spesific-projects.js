@@ -123,7 +123,6 @@ async function getComment() {
     console.log(error);
   }
   if (commnetOutput.childNodes.length === 1){
-    console.log(commnetOutput.childNodes.length)
     commnetOutput.innerHTML = "<p>ingen kommentarer enda...</p>";
   }
 
