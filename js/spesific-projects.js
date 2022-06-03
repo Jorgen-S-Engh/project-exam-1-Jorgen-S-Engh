@@ -65,7 +65,6 @@ async function getMedia(id) {
 // ------------------ MODAL ------------------
 
 const closeModal = document.querySelector(".close-modal");
-// SKRIV OM FEILEN I RAPPORTEN
 
 modal.addEventListener("click", () => {
   modalPop.style.display = "block";

@@ -296,6 +296,9 @@ header {
     align-items: center;
     color:var(--white);
     text-align: center;
+    max-width:750px;
+    margin: 0 auto;
+
 }
 
 .data-vis-section > *{
@@ -326,9 +329,18 @@ header {
     max-width: 100px;
 }
 
-.projects-headline{
+
+
+.project-headline-logo{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-headline-logo >*{
     margin:20px;
 }
+
 
 
 
@@ -402,51 +414,71 @@ footer {
     max-width: 400px;
     position: relative;
     margin:0 auto;
-  }
-  
-  .carousel .carousel__item,
-  .carousel .carousel__item--hidden {
+}
+
+.carousel .carousel__item,
+.carousel .carousel__item--hidden {
     display:none;
 
-  }
+}
   
-  .carousel .carousel__item img {
+.carousel .carousel__item img {
     width: 100%;
     max-width: 400px;
     height: 500px
-    
-  }
+
+}
   
-  .carousel .carousel__item--visible {
+.carousel .carousel__item--visible {
     display: block;
-    /* animation: fadeVisibility 0.5s; */
-  }
+/* animation: fadeVisibility 0.5s; */
+}
   
-  .carousel .carousel__actions {
+.carousel .carousel__actions {
     display: flex;
     width: 100%;
     justify-content: space-between;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-  }
+    cursor: pointer;
+}
+
+
   
-  .carousel .carousel__actions button {
-    border-radius: 50px;
+.carousel__actions button {
     border: 0;
     font-weight: bold;
     cursor: pointer;
     width: 40px;
-    height: 40px;
-  }
+    height: 80px;
+    font-size:2rem;
+    background-color: rgba(0, 0, 0, .4);
+    color: rgba(255, 255, 255, .5);
+    transform: translateY(-50%);
+    
+}
+
+.carousel__actions button:hover{
+    color:var(--white);
+    background-color: rgba(0, 0, 0, .6);
+}
+
   
-  .carousel .carousel__actions button#carousel__button--prev {
-    margin-left: 20px;
-  }
-  
-  .carousel .carousel__actions button#carousel__button--next {
-    margin-right: 20px;
-  }
+
+
+
+
+.carousel .carousel__actions button#carousel__button--prev {
+margin-left: 20px;
+
+/* color:var(--white); */
+}
+
+.carousel .carousel__actions button#carousel__button--next {
+margin-right: 20px;
+
+}
   
   /* @keyframes fadeVisibility {
     0% {
