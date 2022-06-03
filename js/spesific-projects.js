@@ -19,10 +19,9 @@ async function getApi() {
     const data = await response.json();
     loader.innerHTML = "";
 
-    let bilde = null;
-    bilde = await getMedia(data.featured_media);
-    displayHTML(data, bilde);
-
+    let image = null;
+    image = await getMedia(data.featured_media);
+    displayHTML(data, image);
   } catch (error) {
     main.innerHTML = "";
     errorMessage.innerHTML = `
@@ -40,17 +39,16 @@ async function getApi() {
 
 getApi();
 
-
-function displayHTML(data, bilde) {
-  if(bilde === null) {
-    bilde = "";
+function displayHTML(data, image) {
+  if (image === null) {
+    image = "";
   }
-  
+
   headline.innerHTML += `<h1>${data.title.rendered}</h1>`;
-  modal.innerHTML += `<img src="${bilde.media_details.sizes.medium.source_url}" alt="${bilde.alt_text}" />`;
+  modal.innerHTML += `<img src="${image.media_details.sizes.medium.source_url}" alt="${image.alt_text}" />`;
   modalPop.innerHTML += `<img src="${data.featured_media_src_url}" alt="" />`;
   headline.style.backgroundImage = `url("${data.featured_media_src_url}")`;
-  document.title = `Prosjekt | ${data.title.rendered}`;
+  document.title = `Project | ${data.title.rendered}`;
   projectText.innerHTML += `${data.content.rendered}`;
 }
 // ------------------ MEDIA ALT-TEXT ------------------
@@ -59,14 +57,10 @@ async function getMedia(id) {
   try {
     const response = await fetch(media + id);
     const data = await response.json();
-    
+
     return data;
-} catch(e) {
-
+  } catch (e) {}
 }
-}
-
-
 
 // ------------------ MODAL ------------------
 
@@ -92,7 +86,6 @@ const zoom = document.querySelector(".fa-magnifying-glass");
 
 modal.addEventListener("moseover", () => {
   zoom.style.visibility = "visible";
-  
 });
 
 // ------------------  POST COMMNET BLOGPOST------------------
@@ -107,25 +100,24 @@ async function getComment() {
   try {
     const response = await fetch(commentUrl + id);
     const data = await response.json();
-    
+
     for (let i = 0; i < data.length; i++) {
       createHTML(data[i]);
-      if(data[i].post == id) {
-             commnetOutput.innerHTML += `
+      if (data[i].post == id) {
+        commnetOutput.innerHTML += `
       <div class="comment-item">
         <p><strong>${data[i].author_name} skrev:</strong> <p/>
         <p>${data[i].content.rendered}</p>
       </div>
       `;
-      } 
+      }
     }
   } catch (error) {
     console.log(error);
   }
-  if (commnetOutput.childNodes.length === 1){
+  if (commnetOutput.childNodes.length === 1) {
     commnetOutput.innerHTML = "<p>ingen kommentarer enda...</p>";
   }
-
 }
 
 function postComment() {
@@ -136,11 +128,7 @@ form.addEventListener("submit", postComment);
 
 getComment();
 
-
-
-function createHTML(post) {
-
-}
+function createHTML(post) {}
 
 const cName = document.querySelector("#comment-name");
 const cEmail = document.querySelector("#comment-email");
@@ -167,7 +155,7 @@ submit.onclick = function () {
   })
     .then((response) => {
       if (response.ok === true) {
-        location.reload(); 
+        location.reload();
       }
 
       return response.json();

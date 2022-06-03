@@ -571,6 +571,9 @@ footer {
     display:flex;
     flex-direction: column;
     align-items: center;
+    width:80%;
+    margin:0 auto;
+    color:var(--white)
 }
 
 .banner-container h1{
@@ -584,11 +587,6 @@ footer {
 
 }
 
-.text-content-project{
-    width:80%;
-    margin:0 auto;
-    color:var(--white)
-}
 
 
 .text-content-project p{
@@ -693,8 +691,6 @@ footer {
     border-radius: 5px;
     flex-wrap: wrap;
 }
-
-
 
 /* PROJECTS.HTML */
 
@@ -1052,7 +1048,6 @@ footer {
         display:flex;
         justify-content: center;
         align-items: center;
-        
         max-width:1000px;
         margin:50px auto;
     }
@@ -1104,10 +1099,12 @@ footer {
     }
     
     .comment-container{
+        display:flex;
         flex-direction: row;
-        justify-content: space-around;
-        max-width:750px;
-        margin:0 auto;
+        justify-content: center;
+        align-items: center;
+        max-width:1000px;
+        margin:50px auto;
     }
 
     .comment-form{
