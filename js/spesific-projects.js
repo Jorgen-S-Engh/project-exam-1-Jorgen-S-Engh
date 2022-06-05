@@ -70,6 +70,7 @@ modal.addEventListener("click", () => {
   modalPop.style.display = "block";
 });
 
+// CODE NOT WORKING
 // modalPop.addEventListener("click", ()=>{
 //   modalPop.style.display = "none";
 // })
@@ -78,13 +79,6 @@ window.addEventListener("click", (e) => {
   if (e.target === modalPop) {
     modalPop.style.display = "none";
   }
-});
-
-// Funker ikke, vet ikke hvorfor. Skriv i rapporten
-const zoom = document.querySelector(".fa-magnifying-glass");
-
-modal.addEventListener("moseover", () => {
-  zoom.style.visibility = "visible";
 });
 
 // ------------------  POST COMMNET BLOGPOST------------------
