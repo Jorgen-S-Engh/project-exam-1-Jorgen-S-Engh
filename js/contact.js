@@ -1,13 +1,11 @@
-// document.querySelector(".tema-field").placeholder = "new text for tema";
-// element.classList.add("otherclass");
 const form = document.querySelector("form");
 const name = document.querySelector(".name-field");
-const tema = document.querySelector(".tema-field");
+const subject = document.querySelector(".tema-field");
 const email = document.querySelector(".email-field");
 const message = document.querySelector(".text-area");
 const formError = document.querySelector(".form-error");
 const nameError = document.querySelector(".name-error");
-const temaError = document.querySelector(".tema-error");
+const subjectError = document.querySelector(".tema-error");
 const emailError = document.querySelector(".email-error");
 const messageError = document.querySelector(".message-error");
 const messageSuccess = document.querySelector(".message-success");
@@ -23,12 +21,12 @@ function validateForm() {
   } else {
     nameError.style.display = "block";
   }
-  if (checkName(tema.value, 15)) {
-    temaError.style.display = "none";
+  if (checkName(subject.value, 15)) {
+    subjectError.style.display = "none";
 
     counter++;
   } else {
-    temaError.style.display = "block";
+    subjectError.style.display = "block";
   }
   if (validateEmail(email.value)) {
     emailError.style.display = "none";

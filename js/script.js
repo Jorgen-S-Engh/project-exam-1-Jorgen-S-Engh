@@ -1,31 +1,9 @@
-// video slider
-
-// let i = 0;
-// const videos = [];
-
-// function videoSlide() {
-//   videos[0] = "videos/video1.mp4";
-//   videos[1] = "videos/video2.mp4";
-//   videos[2] = "videos/video3.mp4";
-//   document.querySelector("video").src = videos[i];
-
-//   if (i < videos.length - 1) {
-//     i++;
-//   } else {
-//     i = 0;
-//   }
-
-//   setTimeout(videoSlide, 8000);
-// }
-
-// videoSlide();
-
 // SLIDER
 
 let slides = document.getElementsByClassName("carousel__item");
 const carsouselContainer = document.getElementsByClassName("carousel");
 const carouselItem = document.getElementsByClassName("carousel__item");
-const projectHeadline = document.querySelector(".projects-headline")
+const projectHeadline = document.querySelector(".projects-headline");
 const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
 
 async function getApi() {
@@ -52,8 +30,7 @@ async function getApi() {
     }
     // slides.document.getElementsByClassName("carousel__item");
   } catch (error) {
-    projectHeadline.innerHTML = 
-    `
+    projectHeadline.innerHTML = `
     <h2>Kunne ikke laste prosjekter</h2>
     <p>returnerte følgende feilmelding:</p>
     <p>${error}</p>
@@ -80,8 +57,8 @@ const totalSlides = slides.length;
 
 function updateSlidePosition() {
   for (let slide of slides) {
-    slide.classList.remove("carousel__item--visible"); //se på disse
-    slide.classList.add("carousel__item--hidden"); //se på disse
+    slide.classList.remove("carousel__item--visible");
+    // slide.classList.add("carousel__item--hidden");
   }
 
   slides[slidePosition].classList.add("carousel__item--visible");
