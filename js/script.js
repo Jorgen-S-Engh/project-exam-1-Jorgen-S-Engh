@@ -1,8 +1,8 @@
 // SLIDER
 
-let slides = document.getElementsByClassName("carousel__item");
+let slides = document.getElementsByClassName("carousel-item");
 const carsouselContainer = document.getElementsByClassName("carousel");
-const carouselItem = document.getElementsByClassName("carousel__item");
+const carouselItem = document.getElementsByClassName("carousel-item");
 const projectHeadline = document.querySelector(".projects-headline");
 const url = "https://jorgeneksamen2022.online/wp-json/wp/v2/posts/";
 
@@ -16,8 +16,8 @@ async function getApi() {
       console.log(data[i].featured_media_src_url);
       carsouselContainer[0].innerHTML += `
       <a href="spesific-projects.html?id=${data[i].id}">
-            <div class="carousel__item ${
-              i === 0 ? "carousel__item--visible" : ""
+            <div class="carousel-item ${
+              i === 0 ? "carousel-item--visible" : ""
             }">
                 <img src="${data[i].featured_media_src_url}" alt="" />
                 <div class="project-card">
@@ -45,10 +45,10 @@ const totalSlides = slides.length;
 
 function updateSlidePosition() {
   for (let slide of slides) {
-    slide.classList.remove("carousel__item--visible");
+    slide.classList.remove("carousel-item--visible");
   }
 
-  slides[slidePosition].classList.add("carousel__item--visible");
+  slides[slidePosition].classList.add("carousel-item--visible");
 }
 
 function moveToNextSlide() {
@@ -72,9 +72,9 @@ function moveToPrevSlide() {
 }
 
 window.addEventListener("click", (e) => {
-  if (e.target === document.querySelector("#carousel__button--next")) {
+  if (e.target === document.querySelector("#carousel-button--next")) {
     moveToNextSlide();
-  } else if (e.target === document.querySelector("#carousel__button--prev")) {
+  } else if (e.target === document.querySelector("#carousel-button--prev")) {
     moveToPrevSlide();
   }
 });
